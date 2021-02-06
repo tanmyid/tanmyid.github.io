@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Cross Site Scripting Files.fm</title>
+
+
+  
+
+
+  
+  <script data-goatcounter="https://stats.domain.com/count"
+          async src="//stats.domain.com/count.js"></script>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="/index.xml"
+  title="TAN.MY.ID"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cross Site Scripting Files.fm"/>
+<meta name="twitter:description" content="Hallo lur, kembali dengan Write Up XSS on file upload. Maksudnya gimana lur? Jadi gini lur, XSS yang akan saya tulis kali ini adalah XSS file upload dimana kita menyisipkan script XSS nya pada nama file gambar tersebut.
+Nah target kali ini adalah Files.Fm sekali lagi tidak ada reward kali ini dan saya sudah meminta izin adminnya untuk melakukan Write Up. Untuk mengetahui apa itu Files.fm bisa mengunjungi Link Berikut."/>
+
+
+
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="/js/bundle.js"></script>
+<script src="/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.80.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+        <a href="/" class="nav-logo">
+        <img
+          src="/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+        </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Category"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Cross Site Scripting Files.fm
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Aug 31, 2019
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a href="/categories/pentest/">Pentest</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>Hallo lur, kembali dengan Write Up <code>XSS on file upload</code>. <em>Maksudnya gimana lur?</em> Jadi gini lur, XSS yang akan saya tulis kali ini adalah XSS file upload dimana kita menyisipkan script XSS nya pada nama file gambar tersebut.</p>
+<p>Nah target kali ini adalah <a href="https://files.fm">Files.Fm</a> sekali lagi <code>tidak ada reward</code> kali ini dan saya sudah meminta izin adminnya untuk melakukan Write Up. Untuk mengetahui apa itu Files.fm bisa mengunjungi <a href="https://files.fm/about">Link Berikut</a>.</p>
+<pre><code>&quot;Trik ini hanya berlaku untuk sistem operasi linux, di karenakan windows tidak mengijinkan kita merename dengan karakter **&lt; &gt;**. Hindari juga pemakaian **/** sudah pasti tidak di ijinkan&quot;
+</code></pre><p>Oke langsung saja, pertama siapkan sebuah gambar apa aja terserah, mau gambar monyet, foto mantan juga boleh hehe. Lalu rename dengan script XSS, misal seperti berikut :</p>
+<pre><code>&lt;h2 onmouseover=&quot;alert('XSS')&quot;&gt;.png
+</code></pre><p>Hasil :</p>
+<p><a href="https://postimg.cc/dD41CM2b"><img src="https://i.postimg.cc/DyKbtn8w/filename.png" alt="filename.png"></a></p>
+<p>Lalu upload file yang sudah di rename tadi</p>
+<p><a href="https://postimg.cc/rzFyMhBQ"><img src="https://i.postimg.cc/2jn1dM2R/files-fm.png" alt="files-fm.png"></a></p>
+<p>Setelah di upload, coba sorot bagian image uploadnya dan <strong>duarrrr nmex</strong></p>
+<p><a href="https://postimg.cc/rKspChgK"><img src="https://i.postimg.cc/DydbhHXd/got-XSS.png" alt="got-XSS.png"></a></p>
+<p>Intinya adalah, kita cuma menambahkan script XSS pada <code>filename</code> nya saja, simple bukan?</p>
+<p>Sekian tulisan kali ini, jika ada kesalahan mohon di maafkan. Terima Kasih</p>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="/tags/xss/">XSS</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+  <div>
+    
+      <a href="link%20to%20social%20media" name="name of social media"
+        ><em class="A icon from https://fontawesome.com/"></em
+      ></a>
+    
+
+
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="/about">Tanio</a>
+      &nbsp;&copy;
+      2019
+      
+        &nbsp;/&nbsp;
+        <a href="/">TAN.MY.ID</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

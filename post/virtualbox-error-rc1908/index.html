@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Mengatasi Virtualbox Kernel driver not installed (rc=-1908)</title>
+
+
+  
+
+
+  
+  <script data-goatcounter="https://stats.domain.com/count"
+          async src="//stats.domain.com/count.js"></script>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="/index.xml"
+  title="TAN.MY.ID"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mengatasi Virtualbox Kernel driver not installed (rc=-1908)"/>
+<meta name="twitter:description" content="Kebetulan inget dan di ingetin lewat post yang ada di IndoXploit tentang Kernel driver not installed (rc=-1908) yang dimana kita tidak dapat menjalankan mesin virtual yang telah kita buat seperti pada gambar di bawah ini
+
+Dan kalian jika baru saja menginstall virtualbox pada Archlinux (Di sini saya menyebut archlinux karena saya yang kerap mengalami dan menemui masalah tersebut) akan mendapatkan error seperti berikut:
+~ ❯ sudo pacman -S virtualbox[sudo] password for tan: resolving dependencies."/>
+
+
+
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="/js/bundle.js"></script>
+<script src="/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.80.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+        <a href="/" class="nav-logo">
+        <img
+          src="/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+        </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Category"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Mengatasi Virtualbox Kernel driver not installed (rc=-1908)
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Sep 4, 2019
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a href="/categories/linux/">Linux</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>Kebetulan inget dan di ingetin lewat post yang ada di IndoXploit tentang <strong>Kernel driver not installed (rc=-1908)</strong> yang dimana kita tidak dapat menjalankan mesin virtual yang telah kita buat seperti pada gambar di bawah ini</p>
+<p><a href="https://postimg.cc/yW84M6dk"><img src="https://i.postimg.cc/59w4F6Wq/image.png" alt="error-kernel-rc-1908.png"></a></p>
+<p>Dan kalian jika baru saja menginstall virtualbox pada Archlinux (Di sini saya menyebut archlinux karena saya yang kerap mengalami dan menemui masalah tersebut) akan mendapatkan error seperti berikut:</p>
+<pre><code>~ ❯ sudo pacman -S virtualbox
+[sudo] password for tan: 
+resolving dependencies...
+:: There are 2 providers available for VIRTUALBOX-HOST-MODULES:
+:: Repository community
+   1) virtualbox-host-dkms  2) virtualbox-host-modules-arch
+
+Enter a number (default=1): 
+looking for conflicting packages...
+
+Packages (4) dkms-2.7.1-1  sdl-1.2.15-10  virtualbox-host-dkms-6.0.10-1  virtualbox-6.0.1
+
+Total Download Size:    42.11 MiB
+Total Installed Size:  162.24 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ sdl-1.2.15-10-x86_64                                                       341.3 KiB  81
+ dkms-2.7.1-1-any                                                            51.4 KiB  3.
+ virtualbox-host-dkms-6...   682.3 KiB   797K/s 00:01 [----------------------------] 100%
+ virtualbox-6.0.10-1-x86_64   41.1 MiB   806K/s 00:52 [----------------------------] 100%
+(4/4) checking keys in keyring                        [----------------------------] 100%
+(4/4) checking package integrity                      [----------------------------] 100%
+(4/4) loading package files                           [----------------------------] 100%
+(4/4) checking for file conflicts                     [----------------------------] 100%
+(4/4) checking available disk space                   [----------------------------] 100%
+:: Processing package changes...
+(1/4) installing sdl                                  [----------------------------] 100%
+Optional dependencies for sdl
+    alsa-lib: ALSA audio driver [installed]
+    libpulse: PulseAudio audio driver [installed]
+(2/4) installing dkms                                 [----------------------------] 100%
+Optional dependencies for dkms
+    linux-headers: build modules against the Arch kernel
+    linux-lts-headers: build modules against the LTS kernel
+    linux-zen-headers: build modules against the ZEN kernel
+    linux-hardened-headers: build modules against the HARDENED kernel
+(3/4) installing virtualbox-host-dkms                 [----------------------------] 100%
+Optional dependencies for virtualbox-host-dkms
+    linux-headers: build modules against Arch kernel
+    linux-lts-headers: build modules against LTS kernel
+    linux-zen-headers: build modules against ZEN kernel
+(4/4) installing virtualbox                           [----------------------------] 100%
+Optional dependencies for virtualbox
+    vde2: Virtual Distributed Ethernet support
+    virtualbox-guest-iso: Guest Additions CD image
+    virtualbox-ext-vnc: VNC server support
+    virtualbox-sdk: Developer kit
+:: Running post-transaction hooks...
+(1/8) Creating system user accounts...
+(2/8) Install DKMS modules
+==&gt; Unable to install module vboxhost/6.0.10_OSE for kernel *: Missing kernel headers.
+(3/8) Updating icon theme caches...
+(4/8) Reloading system manager configuration...
+(5/8) Reloading device manager configuration...
+(6/8) Arming ConditionNeedsUpdate...
+(7/8) Updating the desktop file MIME type cache...
+(8/8) Updating the MIME type database...
+</code></pre><p>Bagian ini *<em>==&gt; Unable to install module vboxhost/6.0.10_OSE for kernel <em>: Missing kernel headers.</em></em> adalah penyebab virtualbox tidak bisa jalan. Untuk mengatasinya lakukan instalasi kernel headers :</p>
+<pre><code>sudo pacman -S linux-headers
+</code></pre><p>Untuk yang menggunakan kernel LTS</p>
+<pre><code>sudo pacman -S linux-lts-headers
+</code></pre><p>Berikut rinciannya :</p>
+<pre><code>~ ❯ sudo pacman -S linux-headers                                                  1m 41s
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) linux-headers-5.2.11.arch1-1
+
+Total Download Size:    17.70 MiB
+Total Installed Size:  100.32 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ linux-headers-5.2.11.a...    17.7 MiB   676K/s 00:27 [----------------------------] 100%
+(1/1) checking keys in keyring                        [----------------------------] 100%
+(1/1) checking package integrity                      [----------------------------] 100%
+(1/1) loading package files                           [----------------------------] 100%
+(1/1) checking for file conflicts                     [----------------------------] 100%
+(1/1) checking available disk space                   [----------------------------] 100%
+:: Processing package changes...
+(1/1) installing linux-headers                        [----------------------------] 100%
+:: Running post-transaction hooks...
+(1/3) Updating linux module dependencies...
+(2/3) Install DKMS modules
+==&gt; dkms install vboxhost/6.0.10_OSE -k 5.2.11-arch1-1-ARCH
+(3/3) Arming ConditionNeedsUpdate...
+~ ❯
+</code></pre><p>Jika sudah, reboot pc anda dan coba membuat mesin virtual.</p>
+<p>Selamat mencoba ;D</p>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="/tags/virtualbox/">Virtualbox</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+  <div>
+    
+      <a href="link%20to%20social%20media" name="name of social media"
+        ><em class="A icon from https://fontawesome.com/"></em
+      ></a>
+    
+
+
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="/about">Tanio</a>
+      &nbsp;&copy;
+      2019
+      
+        &nbsp;/&nbsp;
+        <a href="/">TAN.MY.ID</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
