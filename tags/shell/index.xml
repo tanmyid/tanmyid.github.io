@@ -14,6 +14,15 @@
 		<atom:link href="/tags/shell/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Single Board Computer Bagi Kaum Kere Hore</title>
+			<link>/post/sbc-kerehore/</link>
+			<pubDate>Sun, 07 Feb 2021 18:41:41 +0700</pubDate>
+			<guid>/post/sbc-kerehore/</guid>
+			<description>Hai man teman, dah lama ndak ngeblog, kali ini gw akan sharing sedikit tentang apa yang gw temuin 2 bulan ini, gw akan membahas tema sesuai judul yaitu Single Board Computer Bagi Kaum Kere Hore. Oke sebelum ke pembahasan, gw jelasin sedikit tentang apa itu SBC.
+Single Board Computer adalah adalah komputer yang lengkap dibangun pada papan sirkuit tunggal, berikut mikroprosesor(s), memori, input / output (I/O) dan fitur lain yang dibutuhkan pada sebuah komputer fungsional.</description>
+		</item>
+      	
+		<item>
 			<title>Mengatasi Virtualbox Kernel driver not installed (rc=-1908)</title>
 			<link>/post/virtualbox-error-rc1908/</link>
 			<pubDate>Wed, 04 Sep 2019 01:18:58 +0700</pubDate>
