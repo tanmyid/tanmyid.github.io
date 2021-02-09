@@ -14,6 +14,16 @@
 		<atom:link href="/tags/security/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Fix Dark Theme WPS Office Linux</title>
+			<link>/post/fix-dark-theme-wps/</link>
+			<pubDate>Tue, 09 Feb 2021 08:29:49 +0700</pubDate>
+			<guid>/post/fix-dark-theme-wps/</guid>
+			<description>Dari pengguna windows yang hijrah di linux, pasti mencari alternatif microsoft office, tetapi terkendala masalah format dokumen entah acak acakan atau font tidak muncul.
+Maka dari itu ada alternatif yaitu, WPS Office. Selama pemakaian untuk kepentingan kuliah, WPS Office sangat membantu bagi gw, interface yang mirip dengan Microsoft Office dan merupakan salah satu program office yang sangat user firendly. WPS Office sendiri menyediakan :
+ WPS Writer WPS Presentation WPS Spreadsheet WPS PDF  Yang menurut gw sudah cukup lengkap untuk kebutuhan office.</description>
+		</item>
+      	
+		<item>
 			<title>Single Board Computer Bagi Kaum Kere Hore</title>
 			<link>/post/sbc-kerehore/</link>
 			<pubDate>Sun, 07 Feb 2021 18:41:41 +0700</pubDate>
@@ -100,16 +110,6 @@ Disini saya menggunakan perl sebagai media backconnect antara server dan ngrok. 
 			<guid>/post/spawn-tty-shell/</guid>
 			<description>Seringkali selama pentest Anda dapat memperoleh shell tanpa tty, namun ingin berinteraksi lebih jauh dengan sistem. Berikut adalah beberapa perintah yang akan memungkinkan Anda untuk memanggil shell tty. Jelas beberapa hal ini akan tergantung pada lingkungan sistem dan paket yang diinstal.
 Shell Spawning  Python :  python -c &#39;import pty; pty.spawn(&amp;quot;/bin/sh&amp;quot;)&#39; Echo :  echo os.system(&#39;/bin/bash&#39;) sh :  /bin/sh -i Perl :  perl —e &#39;exec &amp;quot;/bin/sh&amp;quot;;&#39;atau</description>
-		</item>
-      	
-		<item>
-			<title>Instalasi Cmder</title>
-			<link>/post/instalasi-cmder/</link>
-			<pubDate>Sat, 27 Apr 2019 22:01:04 +0700</pubDate>
-			<guid>/post/instalasi-cmder/</guid>
-			<description>Hay guys kali ini ada sedikit threads soal instalasi CMDER, apasi CMDER itu?
-CMDER adalah paket perangkat lunak yang dibuat karena frustrasi murni karena tidak adanya emulator konsol yang bagus di Windows. Ini didasarkan pada perangkat lunak luar biasa, dan dibumbui dengan skema warna Monokai dan tata letak prompt kustom, tampak seksi dari awal. sumber : CMDER.net
-Jika anda merasa Command Prompt bawaan dari windows sangat membosankan dan hanya mempunyai sedikit variasi perintah, kalian bisa memakai CMDER untuk menangani masalah tersebut, beberapa perintah linux juga di sisipkan di emulator ini.</description>
 		</item>
       	
 	</channel>

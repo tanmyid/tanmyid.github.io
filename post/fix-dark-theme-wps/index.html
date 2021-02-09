@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Fix Dark Theme WPS Office Linux</title>
+
+
+  
+
+
+  
+  <script data-goatcounter="https://stats.domain.com/count"
+          async src="//stats.domain.com/count.js"></script>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="/index.xml"
+  title="TAN.MY.ID"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fix Dark Theme WPS Office Linux"/>
+<meta name="twitter:description" content="Dari pengguna windows yang hijrah di linux, pasti mencari alternatif microsoft office, tetapi terkendala masalah format dokumen entah acak acakan atau font tidak muncul.
+Maka dari itu ada alternatif yaitu, WPS Office. Selama pemakaian untuk kepentingan kuliah, WPS Office sangat membantu bagi gw, interface yang mirip dengan Microsoft Office dan merupakan salah satu program office yang sangat user firendly. WPS Office sendiri menyediakan :
+ WPS Writer WPS Presentation WPS Spreadsheet WPS PDF  Yang menurut gw sudah cukup lengkap untuk kebutuhan office."/>
+
+
+
+<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="/js/bundle.js"></script>
+<script src="/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.80.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+        <a href="/" class="nav-logo">
+        <img
+          src="/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+        </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Category"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Fix Dark Theme WPS Office Linux
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Feb 9, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a href="/categories/linux/">Linux</a
+      >&nbsp;
+    
+      <a href="/categories/office/">Office</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>Dari pengguna windows yang hijrah di linux, pasti mencari alternatif microsoft office, tetapi terkendala masalah format dokumen entah acak acakan atau font tidak muncul.</p>
+<p>Maka dari itu ada alternatif yaitu, WPS Office.
+Selama pemakaian untuk kepentingan kuliah, WPS Office sangat membantu bagi gw, interface yang mirip dengan Microsoft Office dan merupakan salah satu program office yang sangat <em>user firendly</em>. WPS Office sendiri menyediakan :</p>
+<ul>
+<li>WPS Writer</li>
+<li>WPS Presentation</li>
+<li>WPS Spreadsheet</li>
+<li>WPS PDF</li>
+</ul>
+<p>Yang menurut gw sudah cukup lengkap untuk kebutuhan office.</p>
+<p>Tetapi ada masalah yang menurut gw cukup serius, yaitu masalah jika kita mengaktifkan dark theme gtk, karena seraca default, WPS Office menggunakan Qt.</p>
+<p><a href="https://postimg.cc/2V2NhWRV"><img src="https://i.postimg.cc/nhtV8K3Y/Screenshot-2021-02-08-13-32-50-X.png" alt="Screenshot-2021-02-08-13-32-50-X.png"></a></p>
+<p>Seperti gambar di atas, kita ndak bisa liat karakter, karena WPS secara default membaca tema Qt bukan GTK.</p>
+<p>Sebelum ke cara fixnya, perlu di ketahui mana aja yang akan di edit yaitu :</p>
+<pre><code>/usr/bin/wps 	(wps writer)
+/usr/bin/wpp 	(wps presentation)
+/usr/bin/et  	(wps spreadsheet)
+/usr/bin/wpspdf (wps pdf)
+</code></pre><h3 id="editing">Editing</h3>
+<p>Disini gw pake nano karena belom bisa pake vim :&lsquo;D</p>
+<p><code>sudo nano /usr/bin/wps</code></p>
+<p>Ganti baris <code>gOpt=</code> dengan script di bawah</p>
+<pre><code>gOpt=&quot;-style=gtk+&quot;
+export GTK2_RC_FILES=/usr/share/themes/Matcha-azul/gtk-2.0/gtkrc
+</code></pre><p>Untuk <code>Matcha-azul</code> bisa kalian ganti dengan <strong><em>light theme</em></strong> yang akan di pakai, <strong>ingat pakai light theme ya jangan dark theme</strong>.</p>
+<p>Lakukan hal di atas ke semua aplikasi WPS di atas.</p>
+<p>Seperti gambar di bawah ini</p>
+<p><a href="https://postimg.cc/DWYRgxs8"><img src="https://i.postimg.cc/sXVy38g9/Screenshot-2021-02-09-10-33-35-X.png" alt="Screenshot-2021-02-09-10-33-35-X.png"></a></p>
+<p>Untuk <code>wpspdf</code> ada sedikit tambahan di bagian <code>fuction run()</code> yang awalnya</p>
+<pre><code>function run()
+{
+
+        if [ -e &quot;${gInstallPath}/office6/${gApp}&quot; ] ; then
+                { ${gInstallPath}/office6/${gApp} &quot;$@&quot;; } &gt;/dev/null 2&gt;&amp;1
+        else
+                echo &quot;${gApp} does not exist!&quot;
+        fi
+}
+
+</code></pre><p>Menjadi</p>
+<pre><code>function run()
+{
+
+        if [ -e &quot;${gInstallPath}/office6/${gApp}&quot; ] ; then
+                { ${gInstallPath}/office6/${gApp} ${gOpt} &quot;$@&quot;; } &gt;/dev/null 2&gt;&amp;1
+        else
+                echo &quot;${gApp} does not exist!&quot;
+        fi
+}
+
+</code></pre><p>Tambahan <code>${gOpt}</code> di sebelah <code>${gApp}</code></p>
+<p>Kalau sudah bisa di run WPS Officenya.</p>
+<p>Hasil sebelum :</p>
+<p><a href="https://postimg.cc/2V2NhWRV"><img src="https://i.postimg.cc/nhtV8K3Y/Screenshot-2021-02-08-13-32-50-X.png" alt="Screenshot-2021-02-08-13-32-50-X.png"></a></p>
+<p>Hasil sesudah (fixed), di sini saya menggunakan dark theme, sedangkan wps officenya menggunakan light theme.</p>
+<p><a href="https://postimg.cc/jDRVdwtd"><img src="https://i.postimg.cc/XYCnLdPF/Screenshot-2021-02-08-20-57-01-X.png" alt="Screenshot-2021-02-08-20-57-01-X.png"></a></p>
+<p>Sekian, semoga bermanfaat :D</p>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="/tags/wps-office/">wps-office</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+  <div>
+    
+      <a href="link%20to%20social%20media" name="name of social media"
+        ><em class="A icon from https://fontawesome.com/"></em
+      ></a>
+    
+
+
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="/about">Tanio</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="/">TAN.MY.ID</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>shell on TAN.MY.ID</title>
-		<link>/tags/shell/</link>
-		<description>Recent content in shell </description>
+		<title>Office on TAN.MY.ID</title>
+		<link>/categories/office/</link>
+		<description>Recent content in Office </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/tags/shell) (Tanio)</managingEditor>
+		<managingEditor>Page(/categories/office) (Tanio)</managingEditor>
     	
-  		<lastBuildDate>Sun, 28 Apr 2019 06:18:52 +0700</lastBuildDate>
+  		<lastBuildDate>Tue, 09 Feb 2021 08:29:49 +0700</lastBuildDate>
 		
-		<atom:link href="/tags/shell/" rel="self" type="application/rss+xml" />
+		<atom:link href="/categories/office/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Fix Dark Theme WPS Office Linux</title>

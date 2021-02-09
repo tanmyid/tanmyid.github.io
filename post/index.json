@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "/post/fix-dark-theme-wps/",
+                "title": "Fix Dark Theme WPS Office Linux",
+                "section": "post",
+                "date" : "2021.02.09",
+                "body": "Dari pengguna windows yang hijrah di linux, pasti mencari alternatif microsoft office, tetapi terkendala masalah format dokumen entah acak acakan atau font tidak muncul.\nMaka dari itu ada alternatif yaitu, WPS Office. Selama pemakaian untuk kepentingan kuliah, WPS Office sangat membantu bagi gw, interface yang mirip dengan Microsoft Office dan merupakan salah satu program office yang sangat user firendly. WPS Office sendiri menyediakan :\n WPS Writer WPS Presentation WPS Spreadsheet WPS PDF  Yang menurut gw sudah cukup lengkap untuk kebutuhan office.\nTetapi ada masalah yang menurut gw cukup serius, yaitu masalah jika kita mengaktifkan dark theme gtk, karena seraca default, WPS Office menggunakan Qt.\n\nSeperti gambar di atas, kita ndak bisa liat karakter, karena WPS secara default membaca tema Qt bukan GTK.\nSebelum ke cara fixnya, perlu di ketahui mana aja yang akan di edit yaitu :\n/usr/bin/wps (wps writer) /usr/bin/wpp (wps presentation) /usr/bin/et (wps spreadsheet) /usr/bin/wpspdf (wps pdf) Editing Disini gw pake nano karena belom bisa pake vim :\u0026lsquo;D\nsudo nano /usr/bin/wps\nGanti baris gOpt= dengan script di bawah\ngOpt=\u0026quot;-style=gtk+\u0026quot; export GTK2_RC_FILES=/usr/share/themes/Matcha-azul/gtk-2.0/gtkrc Untuk Matcha-azul bisa kalian ganti dengan light theme yang akan di pakai, ingat pakai light theme ya jangan dark theme.\nLakukan hal di atas ke semua aplikasi WPS di atas.\nSeperti gambar di bawah ini\n\nUntuk wpspdf ada sedikit tambahan di bagian fuction run() yang awalnya\nfunction run() { if [ -e \u0026quot;${gInstallPath}/office6/${gApp}\u0026quot; ] ; then { ${gInstallPath}/office6/${gApp} \u0026quot;$@\u0026quot;; } \u0026gt;/dev/null 2\u0026gt;\u0026amp;1 else echo \u0026quot;${gApp} does not exist!\u0026quot; fi } Menjadi\nfunction run() { if [ -e \u0026quot;${gInstallPath}/office6/${gApp}\u0026quot; ] ; then { ${gInstallPath}/office6/${gApp} ${gOpt} \u0026quot;$@\u0026quot;; } \u0026gt;/dev/null 2\u0026gt;\u0026amp;1 else echo \u0026quot;${gApp} does not exist!\u0026quot; fi } Tambahan ${gOpt} di sebelah ${gApp}\nKalau sudah bisa di run WPS Officenya.\nHasil sebelum :\n\nHasil sesudah (fixed), di sini saya menggunakan dark theme, sedangkan wps officenya menggunakan light theme.\n\nSekian, semoga bermanfaat :D\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "/post/sbc-kerehore/",
                 "title": "Single Board Computer Bagi Kaum Kere Hore",
                 "section": "post",
