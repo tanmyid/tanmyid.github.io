@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://blog.tan.my.id/tags/</link>
     <description>Recent content in Tags on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Tanio</copyright>
-    <lastBuildDate>Tue, 09 Feb 2021 22:52:46 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Feb 2021 22:52:46 +0700</lastBuildDate><atom:link href="https://blog.tan.my.id/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://blog.tan.my.id/tags/linux/</link>
       <pubDate>Tue, 09 Feb 2021 22:52:46 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://blog.tan.my.id/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>http://localhost:1313/tags/tutorial/</link>
+      <link>https://blog.tan.my.id/tags/tutorial/</link>
       <pubDate>Tue, 09 Feb 2021 22:52:46 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/tutorial/</guid>
+      <guid>https://blog.tan.my.id/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sbc</title>
-      <link>http://localhost:1313/tags/sbc/</link>
+      <link>https://blog.tan.my.id/tags/sbc/</link>
       <pubDate>Tue, 09 Feb 2021 22:42:09 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/sbc/</guid>
+      <guid>https://blog.tan.my.id/tags/sbc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stb</title>
-      <link>http://localhost:1313/tags/stb/</link>
+      <link>https://blog.tan.my.id/tags/stb/</link>
       <pubDate>Tue, 09 Feb 2021 22:42:09 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/stb/</guid>
+      <guid>https://blog.tan.my.id/tags/stb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pentest</title>
-      <link>http://localhost:1313/tags/pentest/</link>
+      <link>https://blog.tan.my.id/tags/pentest/</link>
       <pubDate>Sat, 31 Aug 2019 22:29:49 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/pentest/</guid>
+      <guid>https://blog.tan.my.id/tags/pentest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>network</title>
-      <link>http://localhost:1313/tags/network/</link>
+      <link>https://blog.tan.my.id/tags/network/</link>
       <pubDate>Wed, 15 May 2019 21:51:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/network/</guid>
+      <guid>https://blog.tan.my.id/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ngrok</title>
-      <link>http://localhost:1313/tags/ngrok/</link>
+      <link>https://blog.tan.my.id/tags/ngrok/</link>
       <pubDate>Fri, 03 May 2019 21:35:14 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/ngrok/</guid>
+      <guid>https://blog.tan.my.id/tags/ngrok/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>http://localhost:1313/tags/shell/</link>
+      <link>https://blog.tan.my.id/tags/shell/</link>
       <pubDate>Sun, 28 Apr 2019 21:22:33 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/shell/</guid>
+      <guid>https://blog.tan.my.id/tags/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tty</title>
-      <link>http://localhost:1313/tags/tty/</link>
+      <link>https://blog.tan.my.id/tags/tty/</link>
       <pubDate>Sun, 28 Apr 2019 21:22:33 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/tty/</guid>
+      <guid>https://blog.tan.my.id/tags/tty/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cmder</title>
-      <link>http://localhost:1313/tags/cmder/</link>
+      <link>https://blog.tan.my.id/tags/cmder/</link>
       <pubDate>Sat, 27 Apr 2019 20:57:04 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/cmder/</guid>
+      <guid>https://blog.tan.my.id/tags/cmder/</guid>
       <description></description>
     </item>
     
     <item>
       <title>windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
+      <link>https://blog.tan.my.id/tags/windows/</link>
       <pubDate>Sat, 27 Apr 2019 20:57:04 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/windows/</guid>
+      <guid>https://blog.tan.my.id/tags/windows/</guid>
       <description></description>
     </item>
     

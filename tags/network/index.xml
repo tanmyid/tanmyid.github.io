@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>network on Blog</title>
-    <link>http://localhost:1313/tags/network/</link>
+    <link>https://blog.tan.my.id/tags/network/</link>
     <description>Recent content in network on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Tanio</copyright>
-    <lastBuildDate>Wed, 15 May 2019 21:51:15 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 May 2019 21:51:15 +0700</lastBuildDate><atom:link href="https://blog.tan.my.id/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Koneksi Wifi Dengan Terminal di Sistem Operasi Linux</title>
-      <link>http://localhost:1313/posts/koneksi-wifi-dengan-terminal/</link>
+      <link>https://blog.tan.my.id/posts/koneksi-wifi-dengan-terminal/</link>
       <pubDate>Wed, 15 May 2019 21:51:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/posts/koneksi-wifi-dengan-terminal/</guid>
+      <guid>https://blog.tan.my.id/posts/koneksi-wifi-dengan-terminal/</guid>
       <description>Intro Terkadang jika kita memanajemen server tanpa GUI, kita di tuntut untuk mengoperasikan termilan, lalu bagaimana jika server tidak menggunakan LAN tapi menggunakan WiFi adapter? Nah pembahasan kali ini yaitu tentang cara simple mengkoneksinakan wifi di sistem operasi linux dengan terminal atau console.
 Walau linux telah dilengkapi dengan network manager berbetuk GUI,namun untuk keadaan tertentu (perbaikan/linux server) kamu hanya bisa setting jaringan linux melalui terminal/shell.
 Dependensi Dependensi yang harus dipenuhi yaitu:</description>

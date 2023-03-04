@@ -2,84 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://blog.tan.my.id/posts/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://blog.tan.my.id/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/fix-dark-theme-wps/</loc>
+    <loc>https://blog.tan.my.id/posts/fix-dark-theme-wps/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://blog.tan.my.id/tags/linux/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://blog.tan.my.id/tags/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tutorial/</loc>
+    <loc>https://blog.tan.my.id/tags/tutorial/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sbc/</loc>
+    <loc>https://blog.tan.my.id/tags/sbc/</loc>
     <lastmod>2021-02-09T22:42:09+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sbc-kerehore/</loc>
+    <loc>https://blog.tan.my.id/posts/sbc-kerehore/</loc>
     <lastmod>2021-02-09T22:42:09+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/stb/</loc>
+    <loc>https://blog.tan.my.id/tags/stb/</loc>
     <lastmod>2021-02-09T22:42:09+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/virtualbox-error-rc1908/</loc>
+    <loc>https://blog.tan.my.id/posts/virtualbox-error-rc1908/</loc>
     <lastmod>2019-09-04T22:36:17+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/xss-files-dot-fm/</loc>
+    <loc>https://blog.tan.my.id/posts/xss-files-dot-fm/</loc>
     <lastmod>2019-08-31T22:29:49+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pentest/</loc>
+    <loc>https://blog.tan.my.id/tags/pentest/</loc>
     <lastmod>2019-08-31T22:29:49+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/xss-aqua/</loc>
+    <loc>https://blog.tan.my.id/posts/xss-aqua/</loc>
     <lastmod>2019-08-24T22:20:27+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hackbar-mod/</loc>
+    <loc>https://blog.tan.my.id/posts/hackbar-mod/</loc>
     <lastmod>2019-08-22T22:13:53+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/xss-cekresi/</loc>
+    <loc>https://blog.tan.my.id/posts/xss-cekresi/</loc>
     <lastmod>2019-07-24T22:02:54+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/koneksi-wifi-dengan-terminal/</loc>
+    <loc>https://blog.tan.my.id/posts/koneksi-wifi-dengan-terminal/</loc>
     <lastmod>2019-05-15T21:51:15+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/network/</loc>
+    <loc>https://blog.tan.my.id/tags/network/</loc>
     <lastmod>2019-05-15T21:51:15+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/backconnect-ngrok/</loc>
+    <loc>https://blog.tan.my.id/posts/backconnect-ngrok/</loc>
     <lastmod>2019-05-03T21:35:14+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ngrok/</loc>
+    <loc>https://blog.tan.my.id/tags/ngrok/</loc>
     <lastmod>2019-05-03T21:35:14+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/shell/</loc>
+    <loc>https://blog.tan.my.id/tags/shell/</loc>
     <lastmod>2019-04-28T21:22:33+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/tty-shell/</loc>
+    <loc>https://blog.tan.my.id/posts/tty-shell/</loc>
     <lastmod>2019-04-28T21:22:33+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tty/</loc>
+    <loc>https://blog.tan.my.id/tags/tty/</loc>
     <lastmod>2019-04-28T21:22:33+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cmder/</loc>
+    <loc>https://blog.tan.my.id/tags/cmder/</loc>
     <lastmod>2019-04-27T20:57:04+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/instalasi-cmder/</loc>
+    <loc>https://blog.tan.my.id/posts/instalasi-cmder/</loc>
     <lastmod>2019-04-27T20:57:04+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
+    <loc>https://blog.tan.my.id/tags/windows/</loc>
     <lastmod>2019-04-27T20:57:04+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://blog.tan.my.id/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://blog.tan.my.id/categories/</loc>
   </url>
 </urlset>

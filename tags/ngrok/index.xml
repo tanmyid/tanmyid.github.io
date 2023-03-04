@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ngrok on Blog</title>
-    <link>http://localhost:1313/tags/ngrok/</link>
+    <link>https://blog.tan.my.id/tags/ngrok/</link>
     <description>Recent content in ngrok on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Tanio</copyright>
-    <lastBuildDate>Fri, 03 May 2019 21:35:14 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 May 2019 21:35:14 +0700</lastBuildDate><atom:link href="https://blog.tan.my.id/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backconnect Ngrok</title>
-      <link>http://localhost:1313/posts/backconnect-ngrok/</link>
+      <link>https://blog.tan.my.id/posts/backconnect-ngrok/</link>
       <pubDate>Fri, 03 May 2019 21:35:14 +0700</pubDate>
       
-      <guid>http://localhost:1313/posts/backconnect-ngrok/</guid>
+      <guid>https://blog.tan.my.id/posts/backconnect-ngrok/</guid>
       <description>Intro Bagi temen temen yang mau rooting server tapi tidak punya VPS, ada cara lain yaitu dengan menggunakan ngrok, tapi tidak semua server atau web shell support backconnect dengan ngrok. tidak ada salahnya mencoba kan? hehe.
 Tutorial Disini saya menggunakan perl sebagai media backconnect antara server dan ngrok. OK lanjut ke alat tempurnya.
 Ngrok Download Pilih sesuai sitem operasi kamu. Server yang support perl sangat di anjurkan (sesuai dengan tutorial), Netcat Download (disini saya menggunakan windows).</description>
