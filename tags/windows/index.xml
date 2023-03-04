@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Blog</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in windows on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Tanio</copyright>
+    <lastBuildDate>Sat, 27 Apr 2019 20:57:04 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalasi Cmder</title>
+      <link>http://localhost:1313/posts/instalasi-cmder/</link>
+      <pubDate>Sat, 27 Apr 2019 20:57:04 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/instalasi-cmder/</guid>
+      <description>Hay guys kali ini ada sedikit threads soal instalasi CMDER, apasi CMDER itu?
+CMDER adalah paket perangkat lunak yang dibuat karena frustrasi murni karena tidak adanya emulator konsol yang bagus di Windows. Ini didasarkan pada perangkat lunak luar biasa, dan dibumbui dengan skema warna Monokai dan tata letak prompt kustom, tampak seksi dari awal. sumber : CMDER.net
+Untuk insalasinya:
+Download CMDER kamu bisa memilih yang mini atau yang full Unzip lalu jalankan cmder.</description>
+    </item>
+    
+  </channel>
+</rss>

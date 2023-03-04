@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sbc on Blog</title>
+    <link>http://localhost:1313/tags/sbc/</link>
+    <description>Recent content in sbc on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Tanio</copyright>
+    <lastBuildDate>Tue, 09 Feb 2021 22:42:09 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/sbc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Single Board Computer Bagi Kaum Kere Hore</title>
+      <link>http://localhost:1313/posts/sbc-kerehore/</link>
+      <pubDate>Tue, 09 Feb 2021 22:42:09 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/sbc-kerehore/</guid>
+      <description>Intro Hai man teman, dah lama ndak ngeblog, kali ini gw akan sharing sedikit tentang apa yang gw temuin 2 bulan ini, gw akan membahas tema sesuai judul yaitu Single Board Computer Bagi Kaum Kere Hore. Oke sebelum ke pembahasan, gw jelasin sedikit tentang apa itu SBC.
+Penjelasan Single Board Computer adalah adalah komputer yang lengkap dibangun pada papan sirkuit tunggal, berikut mikroprosesor(s), memori, input / output (I/O) dan fitur lain yang dibutuhkan pada sebuah komputer fungsional.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tty on Blog</title>
+    <link>http://localhost:1313/tags/tty/</link>
+    <description>Recent content in tty on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Tanio</copyright>
+    <lastBuildDate>Sun, 28 Apr 2019 21:22:33 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/tty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spawn Tty Shell</title>
+      <link>http://localhost:1313/posts/tty-shell/</link>
+      <pubDate>Sun, 28 Apr 2019 21:22:33 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/tty-shell/</guid>
+      <description>Intro Seringkali selama pentest Anda dapat memperoleh shell tanpa tty, namun ingin berinteraksi lebih jauh dengan sistem. Berikut adalah beberapa perintah yang akan memungkinkan Anda untuk memanggil shell tty. Jelas beberapa hal ini akan tergantung pada lingkungan sistem dan paket yang diinstal.
+Shell Spawning Python python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/sh&amp;#34;)&amp;#39; Perl perl —e &amp;#39;exec &amp;#34;/bin/sh&amp;#34;;&amp;#39; Ruby exec &amp;#34;/bin/sh&amp;#34; Echo echo os.system(&amp;#39;/bin/bash&amp;#39;) sh /bin/sh -i lua os.execute(&amp;#39;/bin/sh&amp;#39;) From within IRB exec &amp;#34;/bin/sh&amp;#34; From within vi :!</description>
+    </item>
+    
+  </channel>
+</rss>

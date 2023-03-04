@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Virtualbox Kernel driver not installed (rc=-1908) - Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Mengatasi error Virtualbox Kernel driver not installed (rc=-1908) Linux" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Virtualbox Kernel driver not installed (rc=-1908)" />
+<meta property="og:description" content="Mengatasi error Virtualbox Kernel driver not installed (rc=-1908) Linux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/virtualbox-error-rc1908/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-04T22:36:17+07:00" />
+<meta property="article:modified_time" content="2019-09-04T22:36:17+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Virtualbox Kernel driver not installed (rc=-1908)"/>
+<meta name="twitter:description" content="Mengatasi error Virtualbox Kernel driver not installed (rc=-1908) Linux"/>
+<script src="http://localhost:1313/js/feather.min.js"></script>
+	
+	
+        <link href="http://localhost:1313/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.d902908ac6e0fab67957de5db5aea1b6455b19ae2ca98eac4c95a4a0fdc02238.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Virtualbox Kernel driver not installed (rc=-1908)</h1>
+			<div class="meta">Posted on Sep 4, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Kebetulan inget dan di ingetin lewat post yang ada di <em>IndoXploit</em> tentang <strong>Kernel driver not installed (rc=-1908)</strong> yang dimana kita tidak dapat menjalankan mesin virtual yang telah kita buat seperti pada gambar di bawah ini
+<figure><img src="https://i.postimg.cc/59w4F6Wq/image.png%22"/>
+</figure>
+</p>
+<p>Dan kalian jika baru saja menginstall virtualbox pada Archlinux (Di sini saya menyebut archlinux karena saya yang kerap mengalami dan menemui masalah tersebut) akan mendapatkan error seperti berikut:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~ ❯ sudo pacman -S virtualbox
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> tan: 
+</span></span><span style="display:flex;"><span>resolving dependencies...
+</span></span><span style="display:flex;"><span>:: There are <span style="color:#ae81ff">2</span> providers available <span style="color:#66d9ef">for</span> VIRTUALBOX-HOST-MODULES:
+</span></span><span style="display:flex;"><span>:: Repository community
+</span></span><span style="display:flex;"><span>   1<span style="color:#f92672">)</span> virtualbox-host-dkms  2<span style="color:#f92672">)</span> virtualbox-host-modules-arch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enter a number <span style="color:#f92672">(</span>default<span style="color:#f92672">=</span>1<span style="color:#f92672">)</span>: 
+</span></span><span style="display:flex;"><span>looking <span style="color:#66d9ef">for</span> conflicting packages...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Packages <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> dkms-2.7.1-1  sdl-1.2.15-10  virtualbox-host-dkms-6.0.10-1  virtualbox-6.0.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Total Download Size:    42.11 MiB
+</span></span><span style="display:flex;"><span>Total Installed Size:  162.24 MiB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:: Proceed with installation? <span style="color:#f92672">[</span>Y/n<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span>:: Retrieving packages...
+</span></span><span style="display:flex;"><span> sdl-1.2.15-10-x86_64                                                       341.3 KiB  <span style="color:#ae81ff">81</span>
+</span></span><span style="display:flex;"><span> dkms-2.7.1-1-any                                                            51.4 KiB  3.
+</span></span><span style="display:flex;"><span> virtualbox-host-dkms-6...   682.3 KiB   797K/s 00:01 <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span> virtualbox-6.0.10-1-x86_64   41.1 MiB   806K/s 00:52 <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span> checking keys in keyring                        <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span> checking package integrity                      <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span> loading package files                           <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span> checking <span style="color:#66d9ef">for</span> file conflicts                     <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span> checking available disk space                   <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>:: Processing package changes...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/4<span style="color:#f92672">)</span> installing sdl                                  <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>Optional dependencies <span style="color:#66d9ef">for</span> sdl
+</span></span><span style="display:flex;"><span>    alsa-lib: ALSA audio driver <span style="color:#f92672">[</span>installed<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    libpulse: PulseAudio audio driver <span style="color:#f92672">[</span>installed<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>2/4<span style="color:#f92672">)</span> installing dkms                                 <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>Optional dependencies <span style="color:#66d9ef">for</span> dkms
+</span></span><span style="display:flex;"><span>    linux-headers: build modules against the Arch kernel
+</span></span><span style="display:flex;"><span>    linux-lts-headers: build modules against the LTS kernel
+</span></span><span style="display:flex;"><span>    linux-zen-headers: build modules against the ZEN kernel
+</span></span><span style="display:flex;"><span>    linux-hardened-headers: build modules against the HARDENED kernel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>3/4<span style="color:#f92672">)</span> installing virtualbox-host-dkms                 <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>Optional dependencies <span style="color:#66d9ef">for</span> virtualbox-host-dkms
+</span></span><span style="display:flex;"><span>    linux-headers: build modules against Arch kernel
+</span></span><span style="display:flex;"><span>    linux-lts-headers: build modules against LTS kernel
+</span></span><span style="display:flex;"><span>    linux-zen-headers: build modules against ZEN kernel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span> installing virtualbox                           <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>Optional dependencies <span style="color:#66d9ef">for</span> virtualbox
+</span></span><span style="display:flex;"><span>    vde2: Virtual Distributed Ethernet support
+</span></span><span style="display:flex;"><span>    virtualbox-guest-iso: Guest Additions CD image
+</span></span><span style="display:flex;"><span>    virtualbox-ext-vnc: VNC server support
+</span></span><span style="display:flex;"><span>    virtualbox-sdk: Developer kit
+</span></span><span style="display:flex;"><span>:: Running post-transaction hooks...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/8<span style="color:#f92672">)</span> Creating system user accounts...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>2/8<span style="color:#f92672">)</span> Install DKMS modules
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==</span>&gt; Unable to install module vboxhost/6.0.10_OSE <span style="color:#66d9ef">for</span> kernel *: Missing kernel headers.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>3/8<span style="color:#f92672">)</span> Updating icon theme caches...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/8<span style="color:#f92672">)</span> Reloading system manager configuration...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>5/8<span style="color:#f92672">)</span> Reloading device manager configuration...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>6/8<span style="color:#f92672">)</span> Arming ConditionNeedsUpdate...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>7/8<span style="color:#f92672">)</span> Updating the desktop file MIME type cache...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>8/8<span style="color:#f92672">)</span> Updating the MIME type database...
+</span></span></code></pre></div><p>Bagian ini <em>==&gt; Unable to install module vboxhost/6.0.10_OSE for kernel : Missing kernel headers.</em> adalah penyebab virtualbox tidak bisa jalan.</p>
+<p>Untuk mengatasinya lakukan instalasi kernel headers :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman -S linux-headers
+</span></span></code></pre></div><p>Untuk yang menggunakan kernel LTS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman -S linux-lts-headers
+</span></span></code></pre></div><p>Berikut rinciannya :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~ ❯ sudo pacman -S linux-headers                                                  1m 41s
+</span></span><span style="display:flex;"><span>resolving dependencies...
+</span></span><span style="display:flex;"><span>looking <span style="color:#66d9ef">for</span> conflicting packages...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Packages <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> linux-headers-5.2.11.arch1-1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Total Download Size:    17.70 MiB
+</span></span><span style="display:flex;"><span>Total Installed Size:  100.32 MiB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:: Proceed with installation? <span style="color:#f92672">[</span>Y/n<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span>:: Retrieving packages...
+</span></span><span style="display:flex;"><span> linux-headers-5.2.11.a...    17.7 MiB   676K/s 00:27 <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/1<span style="color:#f92672">)</span> checking keys in keyring                        <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/1<span style="color:#f92672">)</span> checking package integrity                      <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/1<span style="color:#f92672">)</span> loading package files                           <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/1<span style="color:#f92672">)</span> checking <span style="color:#66d9ef">for</span> file conflicts                     <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/1<span style="color:#f92672">)</span> checking available disk space                   <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>:: Processing package changes...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/1<span style="color:#f92672">)</span> installing linux-headers                        <span style="color:#f92672">[</span>----------------------------<span style="color:#f92672">]</span> 100%
+</span></span><span style="display:flex;"><span>:: Running post-transaction hooks...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/3<span style="color:#f92672">)</span> Updating linux module dependencies...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>2/3<span style="color:#f92672">)</span> Install DKMS modules
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==</span>&gt; dkms install vboxhost/6.0.10_OSE -k 5.2.11-arch1-1-ARCH
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>3/3<span style="color:#f92672">)</span> Arming ConditionNeedsUpdate...
+</span></span><span style="display:flex;"><span>~ ❯
+</span></span></code></pre></div><p>Jika sudah, reboot pc anda dan cobalah membuat mesin virtual.</p>
+<p>Selamat mencoba ;D</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/tutorial">tutorial</a></li>
+					
+					<li><a href="/tags/linux">linux</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://twitter.com/athulcajay/" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>
