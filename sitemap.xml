@@ -3,18 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tan.my.id/posts/</loc>
-    <lastmod>2023-04-28T05:33:56+07:00</lastmod>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/</loc>
-    <lastmod>2023-04-28T05:33:56+07:00</lastmod>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/nodejs/</loc>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/npm/</loc>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/posts/run-npm-without-root-access/</loc>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/</loc>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/web/</loc>
+    <lastmod>2023-04-30T11:06:01+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/posts/memaafkan/</loc>
     <lastmod>2023-04-28T05:33:56+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/tags/nguarang/</loc>
-    <lastmod>2023-04-28T05:33:56+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.tan.my.id/tags/</loc>
     <lastmod>2023-04-28T05:33:56+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/posts/hide-root-with-magisk/</loc>
