@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Hide Root With Magisk - Blog</title><link rel="icon" type="image/png" href=https://github.githubassets.com/favicons/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Beberapa Metode Menyembunyikan Root dengan Magisk" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Hide Root With Magisk" />
+<meta property="og:description" content="Beberapa Metode Menyembunyikan Root dengan Magisk" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.tan.my.id/posts/hide-root-with-magisk/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-27T05:33:56+07:00" />
+<meta property="article:modified_time" content="2023-04-27T05:33:56+07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hide Root With Magisk"/>
+<meta name="twitter:description" content="Beberapa Metode Menyembunyikan Root dengan Magisk"/>
+<script src="https://blog.tan.my.id/js/feather.min.js"></script>
+	
+	
+        <link href="https://blog.tan.my.id/css/fonts.11a1877508139eac0b5b4852ceb110c35641b3533321e66e39149e901ed5756b.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.tan.my.id/css/main.0d9b24f6d424364cc4277600b592c7a93c2a6f1b7bc3d1fdfd9d189a13a21ee3.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.tan.my.id/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://blog.tan.my.id/">Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Beranda</a>
+		
+		<a href="/posts">Postingan</a>
+		
+		<a href="/about">Tentang</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Hide Root With Magisk</h1>
+			<div class="meta">Posted on Apr 27, 2023</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="prolog">Prolog</h2>
+<p>Bagi para opreker android, pasti udah ndak asing lagi dengan yang namanya Magisk. Ya, Magisk adalah aplikasi Android yang dikembangkan oleh John Wu yang dapat digunakan untuk mengizinkan dan menyembunyikan penggunaan root dan dapat memastikan bahwa lolos SafetyNet. Bisa di bilang Magisk ini adalah pengganti SuperSU yang untuk jaman sekarang sudah <em>usang</em>.</p>
+<p>Pada awal awal rilis, Magisk ini sangat keren karena memiliki fitur <em>Hide Root</em> agar aplikasi yang kita pilih tidak bisa mendeteksi bahwa HP kita terpasang Magisk. Kebanyakan aplikasi yang ada sangkut pautnya dengan keuangan seperti M-Banking, E-Wallet atau E-Money tidak mengijinkan aplikasinya di buka pada perangkat yang sudah di modifikasi (dalam tanda kutip sudah di &ldquo;root&rdquo;).</p>
+<p>Nah, tapi developer M-Banking, E-Wallet atau E-Money tidak kalah akal, setelah fitur <em>Hide Root</em> ini booming, maka para developer meng-update security aplikasinya agar tetap bisa mendeteksi Magisk walau sudah di <em>Hide Root</em>.</p>
+<h2 id="pembahasan">Pembahasan</h2>
+<p>Ada 3 cara yang saya bahas di sini, bagaimana ngakalin <em>Hide Root</em> bawaan Magisk yang udah ndak bisa yaitu :</p>
+<ol>
+<li>Metode Zygisk + Shamiko</li>
+<li>Metode Magisk Mod, di sini saya membahas Magisk Delta</li>
+<li>Metode Magisk Freeze App</li>
+</ol>
+<p>(Untuk metode ke 3 ini, mirip metode pertama tetapi ada penambahan module)</p>
+<h3 id="metode-zygisk--shamiko">Metode Zygisk + Shamiko</h3>
+<p>Salah satu metode yang paling sering di gunakan karena terhitung simple.</p>
+<ul>
+<li>Download Magisk di <a href="https://github.com/topjohnwu/Magisk/releases">https://github.com/topjohnwu/Magisk/releases</a>, saya saranin pake versi minimal 25.2</li>
+<li>Download dan flash module <a href="https://t.me/magiskalpha/550?single">Shamiko</a>.</li>
+<li>Hide the Magisk App, kasih nama random lalu install.
+<figure><img src="https://telegra.ph/file/15dbecad3b28c2f787db4.jpg"/><figcaption>
+            <h4>Hide App</h4>
+        </figcaption>
+</figure>
+</li>
+<li>Aktifin mode zygisk tapi <em><em>jangan centang Enforce DenyList</em></em>
+<figure><img src="https://telegra.ph/file/0246d657d5495a99c510b.jpg"/><figcaption>
+            <h4>Zygisk</h4>
+        </figcaption>
+</figure>
+</li>
+<li>Configure DenyList untuk nge-hide root aplikasi yang diinginkan.
+<figure><img src="https://telegra.ph/file/daaa8f26d42a649f827d8.jpg"/><figcaption>
+            <h4>Configure DenyList</h4>
+        </figcaption>
+</figure>
+</li>
+</ul>
+<h3 id="metode-magisk-mod">Metode Magisk Mod</h3>
+<p>Magisk 25.2 (Zygisk) + Shamiko sekarang udah kedetek sama beberapa aplikasi mobile banking, kebetulan tadi pagi nemu chat di grup <a href="https://t.me/RedmiNote7Indonesia">https://t.me/RedmiNote7Indonesia</a> bahas soal Magisk Delta
+Setelah gw coba uninstall Magisk 25.2 (Zygisk) terus pasang Magisk Delta ada beberapa Mobile Banking yang terkenal alot buat bypass rootnya bisa tembus
+List Mobile Banking yang tembus</p>
+<ul>
+<li>Line Bank v 2.2.25 (latest PlayStore)</li>
+<li>Octo Mobile v 2.8.7 (latest PlayStore)</li>
+<li>BRImo v 2.35.0 (latest Playstore)</li>
+<li>BCA Mobile v 4.0.2 (latest Playstore)</li>
+<li>Blu BCA v 1.30.0 (latest Playstore)</li>
+<li>BNI Mobile Banking v 5.9.1</li>
+</ul>
+<p>List yang crash :</p>
+<ul>
+<li>Livin&rsquo; by Mandiri v1.2.0 (latest Playstore)</li>
+</ul>
+<p>Untuk Mobile Banking yang lain, gw belum coba sob</p>
+<p>Apps diatas gw install tanggal 29/01/2023</p>
+<p>Tutorial install Magisk Delta</p>
+<ul>
+<li>Uninstall Magisk 25.2</li>
+<li>Download Magisk Delta di <a href="https://huskydg.github.io/magisk-files/">https://huskydg.github.io/magisk-files/</a> Download yang Debug</li>
+<li>Rename ke .zip kalau TWRP atau Ofoxnya belum support flash Magisk versi .apk</li>
+<li>Flash Magisk Delta via TWRP</li>
+<li>Setting nya kaya di sini : <a href="https://postimg.cc/vgP5tqpZ">https://postimg.cc/vgP5tqpZ</a></li>
+<li>Masuk ke Setting &gt; Konfigurasi MagiskHide, nah centang Mobile Banking yang ente punya</li>
+<li>Buka dah tuh Mobile Banking</li>
+</ul>
+<p>Kelemahan pake metode diatas :</p>
+<ul>
+<li>Ga pake zygisk, jadi module module yang butuh zygisk ga bisa jalan, kalau zygisk diaktifin, mobile banking bakal ngedetect root.</li>
+</ul>
+<p>(Metode Magisk Mod ini sudah pernah ditulis di Facebook, saya taruh sini bar rapi hehe).</p>
+<h3 id="metode-magisk-app-freeze">Metode Magisk App Freeze</h3>
+<p>Jadi metode ini sama kaya metode pertama, cuma nambah Module Magisk App Freezer nya</p>
+<ul>
+<li>Hide Magisk App dan Centang Zygisk (tutorial sama kaya di atas).</li>
+<li>Download Magisk App Freezernya di <a href="https://github.com/tanmyid/lavender-files/raw/main/magiskapp_freezer_v1.4.zip">sini</a></li>
+<li>Flash Module</li>
+<li>Done.</li>
+</ul>
+<p><em>Cara kerjanya gimana?</em></p>
+<p>Magisk akan ngefreeze (ilang dari peradaban :&ldquo;v) kalau kita buka aplikasi yang ada di DenyList. nah biar Magisk nya muncul lagi, force close aplikasi DenyList yang berjalan.
+<figure><img src="https://i.postimg.cc/mgzcQhRP/u07-Wgx-Bti6r-N.png"/><figcaption>
+            <h4>Deskripsi Magisk App Freeze</h4>
+        </figcaption>
+</figure>
+</p>
+<p>Sekian, Semoga Bermanfaat</p>
+<h3 id="referensi-sumber">Referensi Sumber</h3>
+<p><a href="https://telegra.ph/Hide-Root---Metode-Shamiko-hide-zygisk-01-31">https://telegra.ph/Hide-Root&mdash;Metode-Shamiko-hide-zygisk-01-31</a>
+<a href="https://www.facebook.com/sindikat.krikil/posts/pfbid0ku3u8MpYJD8Mt7uKz56pakNd2L8LB4Fq2y6qvkRWyi1suC3MCKDQtyeGX39KUCz2l">https://www.facebook.com/sindikat.krikil/posts/pfbid0ku3u8MpYJD8Mt7uKz56pakNd2L8LB4Fq2y6qvkRWyi1suC3MCKDQtyeGX39KUCz2l</a></p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/magisk">magisk</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer >
+    <div style="display:flex"><a class="soc" href="https://github.com/tanmyid" rel="me" title="GitHub"><i data-feather="github"></i></a>
+      <a class="border"></a><a class="soc" href="https://facebook.com/19t4n" rel="me" title="Facebook"><i data-feather="facebook"></i></a>
+      <a class="border"></a><a class="soc" href="https://t.me/tanmyid" rel="me" title="Telegram"><i data-feather="send"></i></a>
+      <a class="border"></a></div>
+    <div class="footer-info">
+      <strong>[</strong>2023  © Tanio <strong>]</strong> 
+    </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>
