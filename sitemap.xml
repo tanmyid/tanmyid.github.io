@@ -3,7 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tan.my.id/posts/</loc>
-<<<<<<< HEAD
     <lastmod>2024-01-02T07:25:11+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/</loc>
@@ -17,19 +16,8 @@
   </url><url>
     <loc>https://blog.tan.my.id/posts/teman/</loc>
     <lastmod>2024-01-02T07:25:11+07:00</lastmod>
-=======
-    <lastmod>2023-05-05T05:40:08+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/posts/kepedulian/</loc>
-    <lastmod>2023-05-05T05:40:08+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.tan.my.id/</loc>
-    <lastmod>2023-05-05T05:40:08+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.tan.my.id/tags/nguarang/</loc>
-    <lastmod>2023-05-05T05:40:08+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.tan.my.id/tags/</loc>
     <lastmod>2023-05-05T05:40:08+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/tags/nodejs/</loc>
@@ -52,7 +40,6 @@
   </url><url>
     <loc>https://blog.tan.my.id/tags/magisk/</loc>
     <lastmod>2023-04-27T05:33:56+07:00</lastmod>
->>>>>>> 7b06e9501b5544483b548ac8e4c265cabb85c02a
   </url><url>
     <loc>https://blog.tan.my.id/posts/entah/</loc>
     <lastmod>2023-01-25T06:34:13+07:00</lastmod>
