@@ -3,15 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.tan.my.id/posts/</loc>
-    <lastmod>2024-01-02T07:25:11+07:00</lastmod>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/android/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/</loc>
-    <lastmod>2024-01-02T07:25:11+07:00</lastmod>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
   </url><url>
-    <loc>https://blog.tan.my.id/tags/nguarang/</loc>
-    <lastmod>2024-01-02T07:25:11+07:00</lastmod>
+    <loc>https://blog.tan.my.id/posts/need-official/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/ksu/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/magisk/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/root/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/tags/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/tutorial/</loc>
+    <lastmod>2024-05-15T08:11:35+07:00</lastmod>
+  </url><url>
+    <loc>https://blog.tan.my.id/tags/nguarang/</loc>
     <lastmod>2024-01-02T07:25:11+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/posts/teman/</loc>
@@ -38,9 +56,6 @@
     <loc>https://blog.tan.my.id/posts/hide-root-with-magisk/</loc>
     <lastmod>2023-04-27T05:33:56+07:00</lastmod>
   </url><url>
-    <loc>https://blog.tan.my.id/tags/magisk/</loc>
-    <lastmod>2023-04-27T05:33:56+07:00</lastmod>
-  </url><url>
     <loc>https://blog.tan.my.id/posts/entah/</loc>
     <lastmod>2023-01-25T06:34:13+07:00</lastmod>
   </url><url>
@@ -60,9 +75,6 @@
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/tags/linux/</loc>
-    <lastmod>2021-02-09T22:52:46+07:00</lastmod>
-  </url><url>
-    <loc>https://blog.tan.my.id/tags/tutorial/</loc>
     <lastmod>2021-02-09T22:52:46+07:00</lastmod>
   </url><url>
     <loc>https://blog.tan.my.id/tags/sbc/</loc>
