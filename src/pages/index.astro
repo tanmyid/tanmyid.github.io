@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Introduction from "../components/Introduction.astro";
+import Featured from "../components/Featured.astro";
+import Newsletter from "../components/Newsletter.astro";
+---
+
+<BaseLayout
+  title="Blog"
+  description="Isinya tutorial, catatan sama kata kata Nguarang"
+  author="Tanio"
+  url="https://ryze.pages.dev"
+>
+  <div class="center">
+    <section>
+      <Introduction />
+    </section>
+    <hr />
+    <section>
+      <Featured />
+    </section>
+    <!-- <hr />
+    <section>
+      <Newsletter />
+    </section> -->
+  </div>
+</BaseLayout>
