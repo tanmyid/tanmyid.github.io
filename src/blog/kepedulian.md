@@ -5,7 +5,7 @@ description: Refleksi tentang makna kepedulian dan pentingnya peduli terhadap di
 date: 2023-05-05
 author: Tanio
 tags: ["nguarang", "personal", "refleksi"]
-featured: true
+featured: false
 editable: true
 ---
 
