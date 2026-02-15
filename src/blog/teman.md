@@ -3,7 +3,7 @@ slug: teman
 title: Teman?
 description: Refleksi tentang teman yang hanya muncul saat membutuhkan bantuan
 date: 2024-01-02
-author: Rahul
+author: Tanio
 tags: ["nguarang", "persahabatan", "kehidupan"]
 featured: false
 editable: true

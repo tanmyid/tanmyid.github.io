@@ -3,7 +3,7 @@ slug: spawn-tty-shell
 title: Spawn TTY Shell
 description: Beberapa cara spawn/memunculkan TTY Shell untuk penetration testing
 date: 2019-04-28
-author: Rahul
+author: Tanio
 tags: ["tutorial", "tty", "shell", "pentest", "linux"]
 featured: false
 editable: true

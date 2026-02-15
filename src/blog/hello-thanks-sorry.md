@@ -3,7 +3,7 @@ slug: hello-thanks-sorry
 title: Hello Thanks Sorry
 description: Pentingnya kata-kata sederhana yang merekatkan kita sebagai makhluk sosial
 date: 2022-11-07
-author: Rahul
+author: Tanio
 tags: ["nguarang", "sosial", "etika", "personal"]
 featured: false
 editable: true

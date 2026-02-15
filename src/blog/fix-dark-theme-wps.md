@@ -3,7 +3,7 @@ slug: fix-dark-theme-wps
 title: Fix Dark Theme WPS Office Linux
 description: Solusi untuk mengatasi masalah dark theme GTK di WPS Office yang menggunakan Qt framework
 date: 2021-02-09
-author: Rahul
+author: Tanio
 tags: ["tutorial", "linux", "wps", "office", "theme"]
 featured: false
 editable: true
@@ -51,7 +51,7 @@ Sebelum ke cara fixnya, perlu diketahui file mana saja yang akan diedit:
 
 ```
 /usr/bin/wps     (WPS Writer)
-/usr/bin/wpp     (WPS Presentation)  
+/usr/bin/wpp     (WPS Presentation)
 /usr/bin/et      (WPS Spreadsheet)
 /usr/bin/wpspdf  (WPS PDF)
 ```
@@ -60,7 +60,7 @@ Sebelum ke cara fixnya, perlu diketahui file mana saja yang akan diedit:
 
 ## [Solution](#solution)
 
-Di sini saya menggunakan *nano* untuk editing. Anda bisa menggunakan text editor favorit Anda:
+Di sini saya menggunakan _nano_ untuk editing. Anda bisa menggunakan text editor favorit Anda:
 
 ```shell
 sudo nano /usr/bin/wps
@@ -73,7 +73,7 @@ gOpt="-style=gtk+"
 export GTK2_RC_FILES=/usr/share/themes/Matcha-azul/gtk-2.0/gtkrc
 ```
 
-Untuk *Matcha-azul* bisa kalian ganti dengan *light theme* yang akan dipakai. **Penting: pakai light theme ya, jangan dark theme**.
+Untuk _Matcha-azul_ bisa kalian ganti dengan _light theme_ yang akan dipakai. **Penting: pakai light theme ya, jangan dark theme**.
 
 <br />
 

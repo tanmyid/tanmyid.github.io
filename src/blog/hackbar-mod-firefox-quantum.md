@@ -3,7 +3,7 @@ slug: hackbar-mod-firefox-quantum
 title: Install Hackbar Mod di Firefox Quantum
 description: Tutorial pemasangan Hackbar Mod yang kompatibel dengan Firefox Quantum untuk web application security testing
 date: 2019-08-22
-author: Rahul
+author: Tanio
 tags: ["pentest", "firefox", "tools", "security"]
 featured: false
 editable: true
@@ -24,9 +24,9 @@ Sejak munculnya Firefox Quantum, beberapa addons pada Mozilla versi lama tidak s
   <figcaption>Official Site Hackbar Mod Quantum</figcaption>
 </figure>
 
-Sedikit penjelasan dari sang developer: 
+Sedikit penjelasan dari sang developer:
 
-*HackBar Quantum is a sidebar that helps you with web application security testing. This add-on is a predecessor to the original HackBar that is not compatible with Firefox Quantum. This is still in beta phase, lots of things are yet to come :)*
+_HackBar Quantum is a sidebar that helps you with web application security testing. This add-on is a predecessor to the original HackBar that is not compatible with Firefox Quantum. This is still in beta phase, lots of things are yet to come :)_
 
 <br />
 

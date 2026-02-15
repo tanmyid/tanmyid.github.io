@@ -3,7 +3,7 @@ slug: backconnect-ngrok
 title: Tutorial Backconnect Server Dengan Ngrok
 description: Tutorial lengkap cara melakukan backconnect server menggunakan ngrok untuk teman-teman yang tidak memiliki VPS
 date: 2019-05-03
-author: Rahul
+author: Tanio
 tags: ["tutorial", "ngrok", "pentest", "networking"]
 featured: false
 editable: true

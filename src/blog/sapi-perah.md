@@ -3,7 +3,7 @@ slug: sapi-perah
 title: Sapi Perah
 description: Renungan tentang orang yang memanfaatkan kebaikan hati orang lain
 date: 2022-11-15
-author: Rahul
+author: Tanio
 tags: ["nguarang", "refleksi", "kehidupan"]
 featured: false
 editable: true

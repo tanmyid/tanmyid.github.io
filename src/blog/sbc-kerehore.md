@@ -3,7 +3,7 @@ slug: sbc-kerehore
 title: Single Board Computer Bagi Kaum Kere Hore
 description: Alternatif murah SBC menggunakan STB bekas Indihome untuk kaum yang budget terbatas
 date: 2021-02-09
-author: Rahul
+author: Tanio
 tags: ["sbc", "stb", "hardware", "budget"]
 featured: true
 editable: true

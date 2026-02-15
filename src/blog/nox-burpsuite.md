@@ -3,7 +3,7 @@ slug: nox-burpsuite
 title: Nox Burpsuite
 description: Tutorial setting up Burp Suite dengan Nox Android emulator untuk testing mobile applications
 date: 2023-03-16
-author: Rahul
+author: Tanio
 tags: ["android", "burpsuite", "emulator", "pentest"]
 featured: false
 editable: true
@@ -18,6 +18,7 @@ Tutorial konfigurasi Nox player dengan Burp Suite untuk melakukan penetration te
 ## [Setup Requirements](#setup-requirements)
 
 Sebelum memulai, pastikan Anda sudah memiliki:
+
 - Nox Player (Android emulator)
 - Burp Suite (Community atau Professional)
 - Koneksi internet yang stabil

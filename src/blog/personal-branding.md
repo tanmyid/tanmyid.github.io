@@ -3,7 +3,7 @@ slug: personal-branding
 title: Personal Branding
 description: Refleksi tentang personal branding dan efeknya yang tidak disadari
 date: 2022-11-05
-author: Rahul
+author: Tanio
 tags: ["nguarang", "personal", "branding", "sosial-media"]
 featured: false
 editable: true

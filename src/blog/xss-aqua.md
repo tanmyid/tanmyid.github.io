@@ -3,7 +3,7 @@ slug: xss-aqua
 title: Cross Site Scripting on Aqua
 description: Cross Site Scripting yang ditemukan di website Aqua.co.id pada form pencarian
 date: 2019-08-24
-author: Rahul
+author: Tanio
 tags: ["pentest", "xss", "security"]
 featured: false
 editable: true

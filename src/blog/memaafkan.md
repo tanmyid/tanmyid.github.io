@@ -3,7 +3,7 @@ slug: memaafkan
 title: Memaafkan
 description: Refleksi tentang proses memaafkan kesalahan orang lain dan belajar melindungi diri
 date: 2023-04-28
-author: Rahul
+author: Tanio
 tags: ["nguarang", "personal", "refleksi", "ramadhan"]
 featured: false
 editable: true

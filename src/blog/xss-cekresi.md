@@ -3,7 +3,7 @@ slug: xss-cekresi
 title: Cross Site Scripting on Cekresi
 description: Cross Site Scripting yang ditemukan di website Cekresi.com pada parameter e
 date: 2019-07-24
-author: Rahul
+author: Tanio
 tags: ["pentest", "xss", "security"]
 featured: false
 editable: true

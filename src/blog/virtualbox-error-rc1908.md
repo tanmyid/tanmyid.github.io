@@ -3,7 +3,7 @@ slug: virtualbox-error-rc1908
 title: VirtualBox Kernel Driver Not Installed (rc=-1908)
 description: Mengatasi error VirtualBox Kernel driver not installed (rc=-1908) pada Linux
 date: 2019-09-04
-author: Rahul
+author: Tanio
 tags: ["linux", "virtualbox", "troubleshooting"]
 featured: true
 editable: true

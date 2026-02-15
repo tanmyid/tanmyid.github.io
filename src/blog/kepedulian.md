@@ -3,7 +3,7 @@ slug: nguarang/kepedulian
 title: Bagimu, Apa Arti Kepedulian?
 description: Refleksi tentang makna kepedulian dan pentingnya peduli terhadap diri sendiri
 date: 2023-05-05
-author: Rahul
+author: Tanio
 tags: ["nguarang", "personal", "refleksi"]
 featured: true
 editable: true

@@ -3,7 +3,7 @@ slug: xss-files-dot-fm
 title: Cross Site Scripting Files Dot Fm
 description: Cross Site Scripting di website Files.fm melalui filename upload vulnerability
 date: 2019-08-31
-author: Rahul
+author: Tanio
 tags: ["pentest", "xss", "security", "file-upload"]
 featured: false
 editable: true

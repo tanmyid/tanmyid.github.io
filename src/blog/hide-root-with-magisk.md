@@ -3,7 +3,7 @@ slug: hide-root-with-magisk
 title: Hide Root With Magisk
 description: Berbagai metode untuk menyembunyikan root Android dengan Magisk agar aplikasi perbankan tetap bisa digunakan
 date: 2023-04-27
-author: Rahul
+author: Tanio
 tags: ["magisk", "android", "root", "banking", "tutorial"]
 featured: false
 editable: true

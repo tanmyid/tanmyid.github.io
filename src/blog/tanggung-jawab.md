@@ -3,7 +3,7 @@ slug: tanggung-jawab
 title: Tanggung Jawab
 description: Refleksi tentang pentingnya bertanggung jawab dengan pilihan dan keputusan yang kita buat
 date: 2022-11-10
-author: Rahul
+author: Tanio
 tags: ["nguarang", "refleksi", "kehidupan"]
 featured: false
 editable: true

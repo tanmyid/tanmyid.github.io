@@ -3,7 +3,7 @@ slug: run-npm-without-root-access
 title: Run NPM Without Root Access
 description: Menjalankan NPM tanpa sudo / doas (tanpa root access) dengan mengatur direktori global packages
 date: 2023-04-30
-author: Rahul
+author: Tanio
 tags: ["web", "npm", "nodejs", "linux"]
 featured: false
 editable: true

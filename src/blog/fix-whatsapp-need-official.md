@@ -3,7 +3,7 @@ slug: fix-whatsapp-need-official
 title: Fix WhatsApp Need Official
 description: Tutorial lengkap untuk mengatasi masalah WhatsApp yang meminta aplikasi official pada perangkat Android yang sudah di-root
 date: 2024-05-15
-author: Rahul
+author: Tanio
 tags: ["tutorial", "android", "root", "whatsapp"]
 featured: true
 editable: true

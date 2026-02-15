@@ -3,7 +3,7 @@ slug: entah
 title: Entah
 description: Refleksi tentang kegelisahan dan ketidakpastian dalam hidup
 date: 2023-01-25
-author: Rahul
+author: Tanio
 tags: ["nguarang", "personal", "refleksi"]
 featured: false
 editable: false

@@ -3,7 +3,7 @@ slug: instalasi-cmder
 title: Tutorial Instalasi CMDer
 description: Tutorial sederhana untuk instalasi CMDer, paket perangkat lunak terminal emulator yang powerful untuk Windows
 date: 2019-04-27
-author: Rahul
+author: Tanio
 tags: ["tutorial", "windows", "cmder", "terminal"]
 featured: false
 editable: true

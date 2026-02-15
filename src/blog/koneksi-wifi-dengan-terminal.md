@@ -3,7 +3,7 @@ slug: koneksi-wifi-dengan-terminal
 title: Koneksi WiFi Dengan Terminal Linux
 description: Tutorial lengkap cara mengkoneksikan WiFi dengan terminal di sistem operasi Linux tanpa GUI
 date: 2019-05-15
-author: Rahul
+author: Tanio
 tags: ["tutorial", "linux", "network", "wifi", "terminal"]
 featured: false
 editable: true
